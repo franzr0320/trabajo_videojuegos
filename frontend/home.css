@@ -1,0 +1,37 @@
+ /* Cambiar color de fondo de la página*/
+ html {
+    background-color: #aaa7a8;
+}
+
+/* Cambiar color de fondo y estilo del botón especial del navbar */
+.navbar .navbar-item2{
+    color: #ffffff; 
+    background-color: #000000;
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    margin: 0; 
+    padding-left: 25px;    
+    padding-right: 25px;   
+}
+  
+
+/* Cambiar color de fondo del navbar */
+.navbar {
+    background-color: #ffffff; 
+    height: 70px;
+}
+
+/* Cambiar color del texto del navbar */
+.navbar-item, .navbar-link {
+    color: #000000; 
+    font-weight: 400;
+}
+  
+/* Cambiar color al pasar el mouse */
+.navbar-item:hover, .navbar-link:hover {
+    background-color: #000000  ; 
+    color: #ffffff;
+}
+  
+  
