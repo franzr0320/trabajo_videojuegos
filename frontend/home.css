@@ -15,7 +15,6 @@
     padding-right: 25px;   
 }
   
-
 /* Cambiar color de fondo del navbar */
 .navbar {
     background-color: #ffffff; 
@@ -34,4 +33,31 @@
     color: #ffffff;
 }
   
+/* Centrar la barra de búsqueda dentro del navbar */
+.navbar .field.has-addons {
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    margin: 0; 
+    padding-left: 15px;    
+    padding-right: 15px;   
+  }
   
+/* Cambiar color del botón de búsqueda */
+.button.is-info {
+    background-color: #979797;
+    border-color: #a2a2a2;
+    color: #ffffff;
+}
+
+/* Cambiar color de los inputs */
+.input {
+    background-color: #ececec;
+    border-color: #aaa7a8;
+    color: #000000;
+}
+
+/* Cambiar color del placeholder en los inputs */
+.input::placeholder {
+    color: #B5B5C3; 
+  } 
