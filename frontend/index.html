@@ -50,7 +50,7 @@
                   Regístrate
                 </a>
           
-                <a class="navbar-item">
+                <a class="navbar-item" id="abrir-modal-login">
                   Iniciar sesión
                 </a>
   
@@ -58,6 +58,65 @@
             </div>
           </div>
         </nav>
+        <!-- MODAL DE LOGIN -->
+    <div class="modal" id="modal-login">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">IDENTIFICATE</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email o Username">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Contraseña">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+        </section>
+        <!-- Content ... -->
+        <footer class="modal-card-foot">
+          <div class="buttons">
+            <button class="button is-success">Iniciar Sesión</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+    
+      // Modal de LOGIN
+      const modalLogin = document.getElementById('modal-login');
+      const abrirLogin = document.getElementById('abrir-modal-login');
+      const cerrarLogin = modalLogin.querySelector('.delete');
+      const fondoLogin = modalLogin.querySelector('.modal-background');
+
+      abrirLogin.onclick = function() {
+        modalLogin.classList.add('is-active');
+      };
+
+      cerrarLogin.onclick = function() {
+        modalLogin.classList.remove('is-active');
+      };
+
+      fondoLogin.onclick = function() {
+        modalLogin.classList.remove('is-active');
+      };
+    </script>
   
   </body>
   </html>
