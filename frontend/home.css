@@ -162,3 +162,10 @@ html {
     color: #454545;
     text-decoration: underline;
 }
+
+/* Estilos para la imagen de fondo en la página de inicio */
+.home {
+    padding-top: 2px;
+    width: 1440px;
+    filter: brightness(50%);
+  }
