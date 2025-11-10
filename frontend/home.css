@@ -165,7 +165,7 @@ html {
 
 /* Estilos para la imagen de fondo en la página de inicio */
 .home {
-    width: 1440px;
+    width: 100%;
     filter: brightness(50%);
 }
 
