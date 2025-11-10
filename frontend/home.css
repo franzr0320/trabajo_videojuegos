@@ -165,7 +165,38 @@ html {
 
 /* Estilos para la imagen de fondo en la página de inicio */
 .home {
-    padding-top: 2px;
     width: 1440px;
     filter: brightness(50%);
-  }
+}
+
+/* Estilos para el texto sobre la imagen de fondo */
+.texto-fondo {
+    position: relative;
+    z-index: 1;                
+    color: white;             
+    text-align: left;                 
+    top: -600px; 
+    padding-left: 80px;                
+}
+  
+/* Estilos para los encabezados dentro del texto de fondo */
+.texto-fondo h1 {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+  
+/* Estilos para el subencabezado dentro del texto de fondo */
+.texto-fondo h2 {
+    font-size: 25px;         
+    font-weight: normal;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #6c6b6d;
+}
+  
+/* Estilos para el tercer nivel de encabezado dentro del texto de fondo */
+.texto-fondo h3 {
+    font-size: 18px;     
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
+    padding-left: 10px;
+}
