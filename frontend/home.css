@@ -17,18 +17,19 @@ html {
   
 /* Cambiar color de fondo del navbar */
 .navbar {
-    background-color: #ffffff; 
-    height: 70px;
+    background-color: #ffffff;
+    height: 10vh;       
+    display: flex;
 }
 
 /* Cambiar color del texto del navbar */
-.navbar-item, .navbar-link {
+.navbar-item {
     color: #000000; 
     font-weight: 400;
 }
   
 /* Cambiar color al pasar el mouse */
-.navbar-item:hover, .navbar-link:hover {
+.navbar-item:hover {
     background-color: #000000  ; 
     color: #ffffff;
 }
@@ -171,11 +172,11 @@ html {
 
 /* Estilos para el texto sobre la imagen de fondo */
 .texto-fondo {
-    position: relative;
+    position: absolute;
     z-index: 1;                
     color: white;             
     text-align: left;                 
-    top: -600px; 
+    top: 38%; 
     padding-left: 80px;                
 }
   
