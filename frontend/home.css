@@ -50,7 +50,7 @@ html {
     color: #302f2f;
     font-size: 15px;
     height: 40px;
-    width: 250px;
+    width: 200px;
     border: 1px solid #aaa7a8;
     border-top-left-radius: 6px;   
     border-bottom-left-radius: 6px; 
@@ -164,10 +164,16 @@ html {
     text-decoration: underline;
 }
 
+.fondo-home {
+    position: relative;  
+    width: 100%;
+}
+
 /* Estilos para la imagen de fondo en la página de inicio */
 .home {
     width: 100%;
     filter: brightness(50%);
+    display: block;
 }
 
 /* Estilos para el texto sobre la imagen de fondo */
@@ -176,13 +182,13 @@ html {
     z-index: 1;                
     color: white;             
     text-align: left;                 
-    top: 38%; 
+    top: 26%; 
     padding-left: 80px;                
 }
   
 /* Estilos para los encabezados dentro del texto de fondo */
 .texto-fondo h1 {
-    font-size: 45px;
+    font-size: 40px;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
