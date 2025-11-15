@@ -1,0 +1,127 @@
+/* Cambiar color de fondo de la página*/
+html {
+    background-color: #aaa7a8;
+}
+
+/* Cambiar color de fondo y estilo del botón especial del navbar */
+.navbar .navbar-item2{
+    color: #ffffff; 
+    background-color: #000000;
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    margin: 0; 
+    padding-left: 25px;    
+    padding-right: 25px;   
+}
+  
+/* Cambiar color de fondo del navbar */
+.navbar {
+    background-color: #ffffff;
+    height: 10vh;       
+    display: flex;
+}
+
+/* Cambiar color del texto del navbar */
+.navbar-item {
+    color: #000000; 
+    font-weight: 400;
+}
+  
+/* Cambiar color al pasar el mouse */
+.navbar-item:hover {
+    background-color: #000000  ; 
+    color: #ffffff;
+}
+  
+/* Centrar la barra de búsqueda dentro del navbar */
+.navbar .field.has-addons {
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    margin: 0; 
+    padding-left: 15px;    
+    padding-right: 15px;   
+}
+
+/* Estilo para el input de búsqueda */
+.input-busqueda {
+    background-color: #ececec;
+    color: #302f2f;
+    font-size: 15px;
+    height: 40px;
+    width: 200px;
+    border: 1px solid #aaa7a8;
+    border-top-left-radius: 6px;   
+    border-bottom-left-radius: 6px; 
+    padding-left: 10px;
+    
+}
+  
+/* Estilo al enfocar el input de búsqueda */
+.input-busqueda:focus {
+    border-color: #7e7e7e;
+    box-shadow: 0 0 6px #7f7e7e;
+    outline: none;
+}
+  
+  
+/* Cambiar color del botón de búsqueda */
+.button.is-info {
+    background-color: #979797;
+    border-color: #a2a2a2;
+    color: #ffffff;
+}
+
+/* Cambiar color de los inputs */
+.input {
+    background-color: #ececec;
+    border-color: #aaa7a8;
+    color: #000000;
+}
+
+/* Cambiar color del placeholder en los inputs */
+.input::placeholder {
+    color: #B5B5C3; 
+} 
+
+/* Estilos para el separador videojuegos*/
+.separador-videojuegos {
+    height: 8vh;
+    min-height: 35px;
+    margin-top: max(6px, 2.5vh);
+    margin-bottom: max(6px, 3.5vh);
+    margin-left: max(6px, 1vw);
+    margin-right: max(6px, 1vw);
+    background-color: #63D6B3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para el texto dentro del separador*/
+.texto-separador {
+    color:#000000;
+
+}
+
+.box {
+    background-color: #323232;
+    flex: 1 1;
+    min-width: 440px;
+    max-width: 700px;
+    height: 24vh;
+    min-height: 170px;
+    margin: 4px;
+       
+}
+
+.contenedor-cajas {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    gap: 10px;
+    justify-content: center;
+    
+}
