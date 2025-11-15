@@ -89,7 +89,8 @@ html {
 .separador-videojuegos {
     height: 8vh;
     min-height: 35px;
-    margin-top: max(6px, 1.5vh);
+    margin-top: max(6px, 2.5vh);
+    margin-bottom: max(6px, 3.5vh);
     margin-left: max(6px, 1vw);
     margin-right: max(6px, 1vw);
     background-color: #63D6B3;
@@ -102,4 +103,25 @@ html {
 .texto-separador {
     color:#000000;
 
+}
+
+.box {
+    background-color: #323232;
+    flex: 1 1;
+    min-width: 440px;
+    max-width: 700px;
+    height: 24vh;
+    min-height: 170px;
+    margin: 4px;
+       
+}
+
+.contenedor-cajas {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    gap: 10px;
+    justify-content: center;
+    
 }
