@@ -64,3 +64,19 @@ html {
     font-size: 15px;
    
 }
+
+/* Posición del botón añadir*/
+.boton-añadir {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+
+}
+
+/* Estilos para el botón añadir - colores*/
+.boton-añadir .button.is-primary {
+    background-color: #a1e0cd;
+    border-color: #8eefd2;
+    color: #000000;
+
+}
