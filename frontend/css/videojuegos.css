@@ -23,17 +23,20 @@ html {
 
 }
 
+/* Estilos para las cajas de los videojuegos*/
 .box {
     background-color: #323232;
     flex: 1 1;
     min-width: 440px;
     max-width: 700px;
-    height: 24vh;
-    min-height: 170px;
+    height: 35vh;
+    min-height: 253px;
     margin: 4px;
+    position: relative;
        
 }
 
+/* Contenedor de las cajas de los videojuegos*/
 .contenedor-cajas {
     display: flex;
     flex-wrap: wrap;
@@ -42,4 +45,22 @@ html {
     gap: 10px;
     justify-content: center;
     
+}
+
+/* Estilos para el contenido dentro de las cajas de los videojuegos*/
+.content {
+    color: #dcdcdc;
+    font-size: 15px;
+}
+
+/* Estilos para el nombre del videojuego*/
+.content strong {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Estilos para el playtime*/
+.tag {
+    font-size: 15px;
+   
 }
