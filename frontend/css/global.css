@@ -1,0 +1,166 @@
+/* Cambiar color de fondo de la página*/
+html {
+    background-color: #aaa7a8;
+}
+
+/* Cambiar color de fondo y estilo del botón especial del navbar */
+.navbar .navbar-item2{
+    color: #ffffff; 
+    background-color: #000000;
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    margin: 0; 
+    padding-left: 25px;    
+    padding-right: 25px;   
+}
+  
+/* Cambiar color de fondo del navbar */
+.navbar {
+    background-color: #ffffff;
+    height: 10vh;       
+    display: flex;
+}
+
+/* Cambiar color del texto del navbar */
+.navbar-item {
+    color: #000000; 
+    font-weight: 400;
+}
+  
+/* Cambiar color al pasar el mouse */
+.navbar-item:hover {
+    background-color: #000000  ; 
+    color: #ffffff;
+}
+  
+/* Centrar la barra de búsqueda dentro del navbar */
+.navbar .field.has-addons {
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    margin: 0; 
+    padding-left: 15px;    
+    padding-right: 15px;   
+}
+
+/* Estilo para el input de búsqueda */
+.input-busqueda {
+    background-color: #ececec;
+    color: #302f2f;
+    font-size: 15px;
+    height: 40px;
+    width: 200px;
+    border: 1px solid #aaa7a8;
+    border-top-left-radius: 6px;   
+    border-bottom-left-radius: 6px; 
+    padding-left: 10px;
+    
+}
+  
+/* Estilo al enfocar el input de búsqueda */
+.input-busqueda:focus {
+    border-color: #7e7e7e;
+    box-shadow: 0 0 6px #7f7e7e;
+    outline: none;
+}
+  
+  
+/* Cambiar color del botón de búsqueda */
+.button.is-info {
+    background-color: #979797;
+    border-color: #a2a2a2;
+    color: #ffffff;
+}
+
+/* Cambiar color de los inputs */
+.input {
+    background-color: #ececec;
+    border-color: #aaa7a8;
+    color: #000000;
+}
+
+/* Cambiar color del placeholder en los inputs */
+.input::placeholder {
+    color: #B5B5C3; 
+} 
+
+
+/* Estilos para el modal de inicio de sesión */
+.modal-card-head {
+    background-color: #8a8a8a;
+    color: #ffffff;
+    padding: 20px;
+    font-weight: 500;
+}
+
+/* Estilos para el cuerpo del modal */
+.modal-card-body {
+    background-color: #d4d4d4;
+    padding: 25px 40px;
+}
+  
+/* Estilos para el pie del modal */
+.modal-card-foot {
+    background-color: #d4d4d4;
+    padding: 10px 15px;
+} 
+  
+/* Estilos para el botón de iniciar sesión, dentro del modal */
+.button.is-success {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+  
+/* Estilos generales para el modal */
+.modal-card {
+    border-radius: 10px;
+    width: 500px;
+}
+  
+/* Estilos para las etiquetas de los formularios */
+.label {
+    color: #757575;
+    font-weight: 600;
+}
+  
+/* Estilos para los inputs de seleccion dentro del modal de registro */
+.control2 .select select {
+    background-color: #ececec;
+    border-color: #aaa7a8;
+    color: #000000;
+}
+  
+/* Estilos al enfocar los inputs de seleccion dentro del modal de registro */
+.control2 .select select:focus{
+    color: #B5B5C3;
+    border-color: #7e7e7e;
+    box-shadow: 0 0 6px #7f7e7e;
+}
+  
+/* Estilos específicos para los inputs dentro del modal de inicio de sesión */
+.control2 .input{
+    background-color: #ffffff;
+    color: #000000;
+}
+  
+/* Estilos para el botón de Guardar */
+.button.is-link {
+    background-color: #393939;
+    border-color: #000000;
+    color: #ffffff;
+}
+  
+/* Estilos para el botón de Cancelar */
+.button.is-link.is-light {
+    background-color: #a3a3a3;
+    border-color: #000000;
+    color: #000000;
+}
+  
+/* Estilos para los enlaces */
+.enlace {
+    color: #454545;
+    text-decoration: underline;
+}
