@@ -48,11 +48,75 @@
     align-items: center;
     justify-content: center;
     height: 13vh;
+    min-height: 55px;
+    width: 100%;
     background-color: #687173;
 }
 
 /* Estilos para el texto del separador */
 .separador-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
     color: #000000;
 }
+
+/* Estilos para las cajas de los videojuegos*/
+.box {
+    background-color: #323232;
+    flex: 1 1;
+    min-width: 470px;
+    max-width: 700px;
+    height: 35vh;
+    min-height: 253px;
+    margin: 4px;
+    position: relative;
+       
+}
+
+/* Contenedor de las cajas de los videojuegos*/
+.contenedor-cajas {
+    padding-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+/* Estilos para el contenido dentro de las cajas de los videojuegos*/
+.content {
+    color: #dcdcdc;
+    font-size: 15px;
+}
+
+/* Estilos para el nombre del videojuego*/
+.content strong {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Estilos para el playtime*/
+.tag {
+    font-size: 15px;
+   
+}
+
+/* Posición del botón añadir*/
+.boton-añadir {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+
+}
+
+/* Estilos para el botón añadir - colores*/
+.boton-añadir .button.is-primary {
+    background-color: #a1e0cd;
+    border-color: #8eefd2;
+    color: #000000;
+
+}
+
+
