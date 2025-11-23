@@ -19,9 +19,9 @@
 
 }
 
+/* Estilos para el contenedor de las cajas*/
 .contenedor-cajas {
     display: flex;
-
     padding-left: 5vw;
     padding-right: 5vw;
     justify-content: center;
@@ -31,12 +31,11 @@
 /* Estilos para el contenedor de crear videojuego*/
 .contenedor-crear-videojuego {
     display: flex;  
-    position: relative;
     padding: 20px;
     flex-wrap: wrap;
     background-color: #323232;
     width: 80vw;
-    
+    border-radius: 8px;    
   
  }
 
@@ -52,6 +51,7 @@
 
 }
 
+/* Estilos para la imagen de relleno*/
 .imagen-relleno {
     filter: brightness(50%);
     padding-left: 20px;
