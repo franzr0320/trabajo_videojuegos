@@ -1,0 +1,62 @@
+/* Estilos para el separador videojuegos*/
+.separador-videojuegos {
+    height: 8vh;
+    min-height: 35px;
+    margin-top: max(6px, 2.5vh);
+    margin-bottom: max(6px, 3.5vh);
+    margin-left: max(6px, 1vw);
+    margin-right: max(6px, 1vw);
+    background-color: #63D6B3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Estilos para el texto dentro del separador*/
+.texto-separador {
+    color:#000000;
+
+}
+
+/* Estilos para el contenedor de las cajas*/
+.contenedor-cajas {
+    display: flex;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    justify-content: center;
+    
+}
+
+/* Estilos para el contenedor de crear videojuego*/
+.contenedor-crear-videojuego {
+    display: flex;  
+    padding: 20px;
+    flex-wrap: wrap;
+    background-color: #323232;
+    width: 80vw;
+    border-radius: 8px;    
+  
+ }
+
+/* Estilos para el contenedor del formulario de crear videojuego*/
+.formulario-videojuego {
+    width: 40%;
+    min-width:250px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-right: 15px;
+    background-color: #323232;
+    flex-grow: 1;
+
+}
+
+/* Estilos para la imagen de relleno*/
+.imagen-relleno {
+    filter: brightness(50%);
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 40vw;
+    min-width:300px;
+ }
+
