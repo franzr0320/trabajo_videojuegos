@@ -22,7 +22,7 @@
 .box {
     background-color: #323232;
     flex: 1 1;
-    min-width: 440px;
+    min-width: 460px;
     max-width: 700px;
     height: 35vh;
     min-height: 253px;
@@ -35,8 +35,8 @@
 .contenedor-cajas {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 3.5vw;
+    padding-right: 3.5vw;
     gap: 10px;
     justify-content: center;
     
@@ -75,4 +75,3 @@
     color: #000000;
 
 }
-
