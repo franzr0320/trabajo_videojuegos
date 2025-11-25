@@ -6,8 +6,10 @@
 /* Estilos para la imagen de fondo en la página de inicio */
 .home {
     width: 100%;
-    filter: brightness(50%);
-    display: block;
+    filter: brightness(45%);
+    height: 100vh;
+    object-fit: cover; 
+    object-position: right center;
 }
 
 /* Estilos para el texto sobre la imagen de fondo */
