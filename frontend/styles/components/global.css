@@ -1,12 +1,12 @@
 /* Cambiar color de fondo de la página*/
 html {
-    background-color: #aaa7a8;
+    background-color: #d4d7db;
 }
 
 /* Cambiar color de fondo y estilo del botón especial del navbar */
 .navbar .navbar-item2{
     color: #ffffff; 
-    background-color: #000000;
+    background-color: var(--primary-color);
     display: flex;
     align-items: center;   
     justify-content: center; 
@@ -24,14 +24,14 @@ html {
 
 /* Cambiar color del texto del navbar */
 .navbar-item {
-    color: #000000; 
+    color: var(--text-secondary-color);
     font-weight: 400;
 }
   
 /* Cambiar color al pasar el mouse */
 .navbar-item:hover {
-    background-color: #000000  ; 
-    color: #ffffff;
+    background-color: var(--primary-color) ; 
+    color: var(--text-primary-color);
 }
   
 /* Centrar la barra de búsqueda dentro del navbar */
@@ -47,7 +47,7 @@ html {
 /* Estilo para el input de búsqueda */
 .input-busqueda {
     background-color: #ececec;
-    color: #302f2f;
+    color: var(--text-secondary-color);
     font-size: 15px;
     height: 40px;
     width: 200px;
@@ -69,32 +69,24 @@ html {
 /* Cambiar color del botón de búsqueda */
 .button.is-info {
     background-color: #979797;
-    border-color: #a2a2a2;
-    color: #ffffff;
-}
-
-/* Cambiar color de los inputs */
-.input {
-    background-color: #ececec;
-    border-color: #aaa7a8;
-    color: #000000;
+    color: var(--text-primary-color)
 }
 
 /* Cambiar color del placeholder en los inputs */
 .input::placeholder {
-    color: #B5B5C3; 
+    color: var(--text-tertiary-color)
 } 
 
 /* Estilos para el footer */
 .footer {
-    background: #000000; 
+    background: var(--primary-color);
     padding: 40px 20px;
     text-align: center;
     margin-top: 40px;
 }
   
 .footer-container p {
-    color: #DDE3EC;
+    color: var(--text-primary-color);
     font-size: 16px;
     margin-bottom: 15px;
 }
@@ -105,7 +97,7 @@ html {
 }
 
 .footer-links a {
-    color: #6c777f;
+    color: var(--text-tertiary-color);
     margin: 12px;
     font-size: 14px;
 }
@@ -114,5 +106,5 @@ html {
 .footer-social a {
     font-size: 23px;
     margin: 10px;
-    color: #4a6ce7da;
+    color: var(--secondary-color);
 }
