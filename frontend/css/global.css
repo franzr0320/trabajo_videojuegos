@@ -164,3 +164,35 @@ html {
     color: #454545;
     text-decoration: underline;
 }
+
+/* Estilos para el footer */
+.footer {
+    background: #000000; 
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+  
+.footer-container p {
+    color: #DDE3EC;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los enlaces en el footer */
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #6c777f;
+    margin: 12px;
+    font-size: 14px;
+}
+
+/* Estilos para los iconos de redes sociales en el footer */
+.footer-social a {
+    font-size: 23px;
+    margin: 10px;
+    color: #4a6ce7da;
+}
