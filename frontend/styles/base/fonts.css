@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee:wght@400&display=swap');
 
 html, body {
-    font-family: var(--font-main);
+    font-family: sans-serif;
 }
 
 .top-games {
-    font-family: var(--font-title);
+    font-family: 'Bungee', sans-serif 
 }
