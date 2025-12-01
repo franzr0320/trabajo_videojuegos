@@ -37,6 +37,7 @@
     width: 80vw;
     border-radius: 8px;
     justify-content: center;   
+    align-items: center;
     
 }
 
@@ -59,12 +60,13 @@
     padding-right: 10px;
     padding-top: 10px;
     width: 40vw;
-    min-width: 400px;
+    min-width: 450px;
     position: relative;
 
 }
 
 .texto-sobre-imagen {
+    filter: brightness(95%);
     position: absolute;
     top: 50%;
     left: 50%;
