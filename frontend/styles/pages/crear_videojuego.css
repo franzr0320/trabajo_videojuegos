@@ -35,8 +35,9 @@
     flex-wrap: wrap;
     background-color: var(--card-color);
     width: 80vw;
-    border-radius: 8px;    
-  
+    border-radius: 8px;
+    justify-content: center;   
+    
  }
 
 /* Estilos para el contenedor del formulario de crear videojuego*/
@@ -58,4 +59,4 @@
     padding-top: 10px;
     width: 40vw;
     min-width:300px;
- }
+}
