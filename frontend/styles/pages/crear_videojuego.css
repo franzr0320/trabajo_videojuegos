@@ -61,5 +61,21 @@
     padding-top: 10px;
     width: 40vw;
     min-width: 400px;
+    position: relative;
 
 }
+
+.texto-sobre-imagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-primary-color);
+    font-size: 5vh;     
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+
+
+
