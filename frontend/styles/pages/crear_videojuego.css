@@ -6,7 +6,7 @@
     margin-bottom: max(6px, 3.5vh);
     margin-left: max(6px, 1vw);
     margin-right: max(6px, 1vw);
-    background-color: #63D6B3;
+    background-color: var(--secondary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,7 @@
 
 /* Estilos para el texto dentro del separador*/
 .texto-separador {
-    color:#000000;
+    color: var(--text-primary-color);
 
 }
 
@@ -33,7 +33,7 @@
     display: flex;  
     padding: 20px;
     flex-wrap: wrap;
-    background-color: #323232;
+    background-color: var(--card-color);
     width: 80vw;
     border-radius: 8px;    
   
@@ -46,7 +46,7 @@
     padding-left: 30px;
     padding-top: 30px;
     padding-right: 15px;
-    background-color: #323232;
+    background-color: var(--card-color);
     flex-grow: 1;
 
 }
@@ -59,4 +59,3 @@
     width: 40vw;
     min-width:300px;
  }
-

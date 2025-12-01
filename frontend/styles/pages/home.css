@@ -15,8 +15,7 @@
 /* Estilos para el texto sobre la imagen de fondo */
 .texto-fondo {
     position: absolute;
-    z-index: 1;                
-    color: white;             
+    z-index: 1;   
     text-align: left;                 
     top: 26%; 
     padding-left: 80px;                
@@ -24,6 +23,7 @@
   
 /* Estilos para los encabezados dentro del texto de fondo */
 .texto-fondo h1 {
+    color: var(--text-primary-color);
     font-size: 40px;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -59,7 +59,7 @@
 .separador-text {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
-    color: #000000;
+    color: var(--text-secondary-color)
 }
 
 .top-games-container {
@@ -71,8 +71,7 @@
 }
 .top-games {
     font-size: 39px;
-    color: #ca6328;
+    color: var(--secondary-color);
     font-family:'Bungee', sans-serif;
 
 }
-

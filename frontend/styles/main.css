@@ -1,0 +1,13 @@
+/* Base */
+@import url('./base/variables.css');
+@import url('./base/fonts.css');
+
+/* Componentes */
+@import url('./components/global.css');
+@import url('./components/modal.css');
+@import url('./components/card_videojuegos.css');
+
+/* Páginas */
+@import url('./pages/home.css');
+@import url('./pages/videojuegos.css');
+@import url('./pages/crear_videojuego.css');

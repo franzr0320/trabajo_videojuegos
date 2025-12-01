@@ -1,6 +1,6 @@
 /* Estilos para las cajas de los videojuegos*/
 .box {
-    background-color: #323232;
+    background-color: var(--card-color);
     flex: 1 1;
     min-width: 460px;
     max-width: 700px;
@@ -24,13 +24,13 @@
 
 /* Estilos para el contenido dentro de las cajas de los videojuegos*/
 .content {
-    color: #dcdcdc;
+    color: var(--text-tertiary-color);
     font-size: 15px;
 }
 
 /* Estilos para el nombre del videojuego*/
 .content strong {
-    color: #ffffff;
+    color: var(--text-primary-color);
     font-size: 20px;
 }
 
@@ -50,8 +50,8 @@
 
 /* Estilos para el botón añadir - colores*/
 .boton-añadir .button.is-primary {
-    background-color: #a1e0cd;
-    border-color: #8eefd2;
-    color: #000000;
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    color: var(--primary-color);
 
 }
