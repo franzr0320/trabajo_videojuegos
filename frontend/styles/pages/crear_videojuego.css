@@ -47,7 +47,6 @@
     min-width:250px;
     max-width: 580px;
     padding-left: 30px;
-    padding-top: 30px;
     padding-right: 15px;
     background-color: var(--card-color);
     flex-grow: 1;
@@ -60,7 +59,7 @@
     padding-right: 10px;
     padding-top: 10px;
     width: 40vw;
-    min-width: 450px;
+    min-width: 440px;
     position: relative;
 
 }
