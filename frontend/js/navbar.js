@@ -1,3 +1,5 @@
+let isLoggedIn = true;
+
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -27,11 +29,29 @@ document.getElementById("navbar-container").innerHTML = `
       <a class="navbar-item">Progreso</a>
       <a class="navbar-item" href="./crear_videojuego.html">Sumá tu juego</a>
     </div>
-
-    <div class="navbar-end">
-      <a class="navbar-item" id="abrir-modal-register">Regístrate</a>
-      <a class="navbar-item" id="abrir-modal-login">Iniciar sesión</a>
-    </div>
+    
+    <div class="navbar-end" id="navbar-auth"></div>
   </div>
 </nav>
 `;
+
+// Render dinámico según si está logueado o no
+function renderNavbarAuth() {
+  const authDiv = document.getElementById("navbar-auth");
+
+  if (isLoggedIn) {
+    authDiv.innerHTML = `
+      <a class="navbar-item" href="./perfil.html">Perfil</a>
+      <a class="navbar-item" id="cerrar-sesion">Cerrar sesión</a>
+    `;
+  } 
+  
+  else {
+    authDiv.innerHTML = `
+      <a class="navbar-item" id="abrir-modal-register">Regístrate</a>
+      <a class="navbar-item" id="abrir-modal-login">Iniciar sesión</a>
+    `;
+  }
+}
+
+renderNavbarAuth();
