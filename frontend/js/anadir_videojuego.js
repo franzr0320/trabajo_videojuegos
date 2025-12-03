@@ -76,7 +76,7 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
       
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link">Guardar</button>
+          <button class="button is-link requiere-login">Guardar</button>
         </div>
         <div class="control">
           <button class="button is-link is-light">Cancelar</button>
