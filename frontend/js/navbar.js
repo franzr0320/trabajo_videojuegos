@@ -3,15 +3,14 @@ let isLoggedIn = false;
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item2" href="./home.html">
-      <span class="has-text-weight-bold is-size-5">*NOMBRE APP*</span>
-    </a>
-
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
+    </a>
+    <a class="navbar-item2" href="./home.html">
+      <span class="has-text-weight-bold is-size-5">*NOMBRE APP*</span>
     </a>
   </div>
 
@@ -63,3 +62,5 @@ document.addEventListener("click", function (event) {
     alert("Es necesario Iniciar sesión");
   }
 });
+
+
