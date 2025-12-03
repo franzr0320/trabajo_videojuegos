@@ -1,4 +1,4 @@
-let isLoggedIn = true;
+let isLoggedIn = false;
 
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -26,10 +26,10 @@ document.getElementById("navbar-container").innerHTML = `
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">Progreso</a>
-      <a class="navbar-item" href="./crear_videojuego.html">Sumá tu juego</a>
+      <a class="navbar-item requiere-login">Progreso</a>
+      <a class="navbar-item requiere-login" href="./crear_videojuego.html">Sumá tu juego</a>
     </div>
-    
+
     <div class="navbar-end" id="navbar-auth"></div>
   </div>
 </nav>
@@ -55,3 +55,11 @@ function renderNavbarAuth() {
 }
 
 renderNavbarAuth();
+
+ // Bloquea botones que requieren el Login //
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("requiere-login") && !isLoggedIn) {
+    event.preventDefault(); 
+    alert("Es necesario Iniciar sesión");
+  }
+});
