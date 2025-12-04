@@ -1,0 +1,13 @@
+:root {
+    /* Colores principales */
+    --primary-color: #111010; 
+    --secondary-color: #245981;
+    --tertiary-color: #bbdefc;          
+
+    /* Colores texto*/
+    --text-primary-color: #ffffff;
+    --text-secondary-color: #262525; 
+    --text-tertiary-color: #a8a7a7; 
+
+    --card-color: #222222; 
+}

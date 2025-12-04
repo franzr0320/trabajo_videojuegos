@@ -6,15 +6,16 @@
 /* Estilos para la imagen de fondo en la página de inicio */
 .home {
     width: 100%;
-    filter: brightness(50%);
-    display: block;
+    filter: brightness(45%);
+    height: 100vh;
+    object-fit: cover; 
+    object-position: right center;
 }
 
 /* Estilos para el texto sobre la imagen de fondo */
 .texto-fondo {
     position: absolute;
-    z-index: 1;                
-    color: white;             
+    z-index: 1;   
     text-align: left;                 
     top: 26%; 
     padding-left: 80px;                
@@ -22,6 +23,7 @@
   
 /* Estilos para los encabezados dentro del texto de fondo */
 .texto-fondo h1 {
+    color: var(--text-primary-color);
     font-size: 40px;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -57,78 +59,19 @@
 .separador-text {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
-    color: #000000;
-}
-
-/* Estilos para las cajas de los videojuegos*/
-.box {
-    background-color: #323232;
-    flex: 1 1;
-    min-width: 460px;
-    max-width: 700px;
-    height: 35vh;
-    min-height: 253px;
-    margin: 4px;
-    position: relative;
-       
-}
-
-/* Contenedor de las cajas de los videojuegos*/
-.contenedor-cajas {
-    padding-top: 27px;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 3.5vw;
-    padding-right: 3.5vw;
-    gap: 10px;
-    justify-content: center;
-    
-}
-
-/* Estilos para el contenido dentro de las cajas de los videojuegos*/
-.content {
-    color: #dcdcdc;
-    font-size: 15px;
-}
-
-/* Estilos para el nombre del videojuego*/
-.content strong {
-    color: #ffffff;
-    font-size: 20px;
-}
-
-/* Estilos para el playtime*/
-.tag {
-    font-size: 15px;
-   
-}
-
-/* Posición del botón añadir*/
-.boton-añadir {
-    position: absolute;
-    bottom: 12px;
-    right: 15px;
-
-}
-
-/* Estilos para el botón añadir - colores*/
-.boton-añadir .button.is-primary {
-    background-color: #a1e0cd;
-    border-color: #8eefd2;
-    color: #000000;
-
+    color: var(--text-secondary-color)
 }
 
 .top-games-container {
     text-align: left;
     padding-left: 5vw;
     padding-top: 4vh;
+    padding-bottom: 18px;
    
 }
 .top-games {
     font-size: 39px;
-    color: #ca6328;
+    color: var(--secondary-color);
     font-family:'Bungee', sans-serif;
 
 }
-
