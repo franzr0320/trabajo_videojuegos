@@ -1,11 +1,11 @@
 /* Estilos para el separador videojuegos*/
-.separador-videojuegos {
+.separador-pagina-videojuegos {
     height: 8vh;
-    min-height: 35px;
+    min-height: 48px;
     margin-top: max(6px, 2.5vh);
-    margin-bottom: max(6px, 3.5vh);
-    margin-left: max(6px, 1vw);
-    margin-right: max(6px, 1vw);
+    margin-bottom: max(6px, 2.5vh);
+    margin-left: max(6px, 4vw);
+    margin-right: max(6px, 4vw);
     background-color: var(--secondary-color);
     display: flex;
     align-items: center;
@@ -18,14 +18,10 @@
 
 }
 
-/* Centrar la barra de búsqueda dentro del navbar */
-.navbar .field.has-addons {
+.searchbar {
     display: flex;
-    align-items: center;   
-    justify-content: center; 
-    margin: 0; 
-    padding-left: 15px;    
-    padding-right: 15px;   
+    justify-content: center;
+    margin-bottom: max(6px, 2.5vh);
 }
 
 /* Estilo para el input de búsqueda */
@@ -33,8 +29,8 @@
     background-color: #ececec;
     color: var(--text-secondary-color);
     font-size: 15px;
-    height: 40px;
-    width: 200px;
+    height: 47px;
+    width: 250px;
     border: 1px solid #aaa7a8;
     border-top-left-radius: 6px;   
     border-bottom-left-radius: 6px; 
@@ -53,7 +49,9 @@
 /* Cambiar color del botón de búsqueda */
 .button.is-info {
     background-color: #979797;
-    color: var(--text-primary-color)
+    color: var(--text-primary-color);
+    height: 47px;
+    width: 100px;
 }
 
 /* Cambiar color del placeholder en los inputs */
