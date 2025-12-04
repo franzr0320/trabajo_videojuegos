@@ -11,7 +11,7 @@ html {
     align-items: center;   
     justify-content: center; 
     margin: 0; 
-    padding-left: 25px;    
+    padding-left: 20px;    
     padding-right: 25px;   
 }
   
@@ -44,6 +44,23 @@ html {
     padding-right: 15px;   
 }
 
+.navbar-burger span {
+    background-color: var(--tertiary-color);
+}
+
+.navbar-burger {
+    background-color: var(--primary-color)
+}
+
+.navbar-burger:hover{
+    background-color: var(--primary-color)
+}
+
+.navbar-brand {
+    background-color: var(--primary-color);
+    padding-left: 10px;
+
+}
 /* Estilo para el input de búsqueda */
 .input-busqueda {
     background-color: #ececec;
