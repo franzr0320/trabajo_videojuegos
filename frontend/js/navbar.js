@@ -1,4 +1,4 @@
-let isLoggedIn = false;
+let isLoggedIn = true;
 
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -14,17 +14,9 @@ document.getElementById("navbar-container").innerHTML = `
     </a>
   </div>
 
-  <div class="field has-addons">
-    <div class="control">
-      <input class="input-busqueda" type="text" placeholder="Busca tu videojuego...">
-    </div>
-    <div class="control">
-      <button class="button is-info">Buscar</button>
-    </div>
-  </div>
-
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
+      <a class="navbar-item " href="./videojuegos.html">Videojuegos</a>
       <a class="navbar-item requiere-login">Progreso</a>
       <a class="navbar-item requiere-login" href="./crear_videojuego.html">Sumá tu juego</a>
     </div>
@@ -61,6 +53,17 @@ document.addEventListener("click", function (event) {
     event.preventDefault(); 
     alert("Es necesario Iniciar sesión");
   }
+});
+
+// Menu Hamburguesa //
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".navbar-burger");
+  const menu = document.getElementById(burger.dataset.target);
+
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+  });
 });
 
 
