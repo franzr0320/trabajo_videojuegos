@@ -16,7 +16,7 @@ document.getElementById("navbar-container").innerHTML = `
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item ">Videojuegos</a>
+      <a class="navbar-item " href="./videojuegos.html">Videojuegos</a>
       <a class="navbar-item requiere-login">Progreso</a>
       <a class="navbar-item requiere-login" href="./crear_videojuego.html">Sumá tu juego</a>
     </div>

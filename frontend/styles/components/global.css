@@ -130,7 +130,7 @@ html {
     color: var(--secondary-color);
 }
 
-/* Altura personalizada para cada item del menú desplegado */
+/* Estilos botones del menu hamburguesa */
 @media (max-width: 1024px) {
     .navbar-menu .navbar-item {
         padding-top: 20px;    
