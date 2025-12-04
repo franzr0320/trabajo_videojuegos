@@ -1,4 +1,4 @@
-let isLoggedIn = false;
+let isLoggedIn = true;
 
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">

@@ -26,6 +26,10 @@ html {
 .navbar-item {
     color: var(--text-secondary-color);
     font-weight: 400;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   
 /* Cambiar color al pasar el mouse */
