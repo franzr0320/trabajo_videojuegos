@@ -125,3 +125,19 @@ html {
     margin: 10px;
     color: var(--secondary-color);
 }
+
+/* Altura personalizada para cada item del menú desplegado */
+@media (max-width: 1024px) {
+    .navbar-menu .navbar-item {
+        padding-top: 20px;    
+        padding-bottom: 20px;  
+        width: 200px;
+        text-align: center;
+        background-color: #ffffff;    
+    }
+
+    .navbar-item:hover {
+        background-color: var(--primary-color) ; 
+        color: var(--text-primary-color);
+    }
+}
