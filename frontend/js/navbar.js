@@ -1,4 +1,4 @@
-let isLoggedIn = false;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -50,12 +50,15 @@ document.addEventListener("click", function (event) {
   if (event.target && event.target.id === "cerrar-sesion") {
     event.preventDefault();
     isLoggedIn = false;
+    localStorage.setItem("isLoggedIn", "false");
     renderNavbarAuth();
   }
+
   if (event.target && event.target.id === "boton-login-modal") {
-    event.preventDefault();
-    isLoggedIn = true;
-    renderNavbarAuth();
+  event.preventDefault();
+  isLoggedIn = true;
+  localStorage.setItem("isLoggedIn", "true");
+  renderNavbarAuth();
   }
 });
 
