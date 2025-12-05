@@ -52,7 +52,7 @@ document.addEventListener("click", function (event) {
     isLoggedIn = false;
     localStorage.setItem("isLoggedIn", "false");
     renderNavbarAuth();
-    location.reload();
+    window.location.href = "./home.html";
   }
 
   if (event.target && event.target.id === "boton-login-modal") {
