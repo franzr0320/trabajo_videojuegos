@@ -1,4 +1,4 @@
-let isLoggedIn = true;
+let isLoggedIn = false;
 
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -45,9 +45,23 @@ function renderNavbarAuth() {
   }
 }
 
+// Hace que el botón cerrar sesión isLoggedIn = false y el botón iniciar sesión isLoggedIn = True //
+document.addEventListener("click", function (event) {
+  if (event.target && event.target.id === "cerrar-sesion") {
+    event.preventDefault();
+    isLoggedIn = false;
+    renderNavbarAuth();
+  }
+  if (event.target && event.target.id === "boton-login-modal") {
+    event.preventDefault();
+    isLoggedIn = true;
+    renderNavbarAuth();
+  }
+});
+
 renderNavbarAuth();
 
- // Bloquea botones que requieren el Login //
+// Bloquea botones que requieren el Login //
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("requiere-login") && !isLoggedIn) {
     event.preventDefault(); 
