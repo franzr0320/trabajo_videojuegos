@@ -12,3 +12,34 @@
     border-radius: 8px;
 
 }
+
+/* Estilos para la posición botón eliminar */
+.boton-eliminar {
+    position: absolute;
+    bottom: 12px;
+    right: 80px;
+
+}
+
+/* Estilos para el botón eliminar */
+.boton-eliminar .button.is-primary {
+    background-color: #d85454;
+    color: var(--primary-color);
+
+}
+
+/* Posición del botón añadir*/
+.boton-editar-videojuego {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+
+}
+
+/* Estilos para el botón añadir - colores*/
+.boton-editar-videojuego .button.is-primary {
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    color: var(--primary-color);
+
+}
