@@ -26,22 +26,16 @@ html {
 .navbar-item {
     color: var(--text-secondary-color);
     font-weight: 400;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   
 /* Cambiar color al pasar el mouse */
 .navbar-item:hover {
     background-color: var(--primary-color) ; 
     color: var(--text-primary-color);
-}
-  
-/* Centrar la barra de búsqueda dentro del navbar */
-.navbar .field.has-addons {
-    display: flex;
-    align-items: center;   
-    justify-content: center; 
-    margin: 0; 
-    padding-left: 15px;    
-    padding-right: 15px;   
 }
 
 .navbar-burger span {
@@ -61,38 +55,6 @@ html {
     padding-left: 10px;
 
 }
-/* Estilo para el input de búsqueda */
-.input-busqueda {
-    background-color: #ececec;
-    color: var(--text-secondary-color);
-    font-size: 15px;
-    height: 40px;
-    width: 200px;
-    border: 1px solid #aaa7a8;
-    border-top-left-radius: 6px;   
-    border-bottom-left-radius: 6px; 
-    padding-left: 10px;
-    
-}
-  
-/* Estilo al enfocar el input de búsqueda */
-.input-busqueda:focus {
-    border-color: #7e7e7e;
-    box-shadow: 0 0 6px #7f7e7e;
-    outline: none;
-}
-  
-  
-/* Cambiar color del botón de búsqueda */
-.button.is-info {
-    background-color: #979797;
-    color: var(--text-primary-color)
-}
-
-/* Cambiar color del placeholder en los inputs */
-.input::placeholder {
-    color: var(--text-tertiary-color)
-} 
 
 /* Estilos para el footer */
 .footer {
@@ -124,4 +86,20 @@ html {
     font-size: 23px;
     margin: 10px;
     color: var(--secondary-color);
+}
+
+/* Estilos botones del menu hamburguesa */
+@media (max-width: 1024px) {
+    .navbar-menu .navbar-item {
+        padding-top: 20px;    
+        padding-bottom: 20px;  
+        width: 200px;
+        text-align: center;
+        background-color: #ffffff;    
+    }
+
+    .navbar-item:hover {
+        background-color: var(--primary-color) ; 
+        color: var(--text-primary-color);
+    }
 }
