@@ -16,6 +16,13 @@ document.getElementById("modificar_videojuego-container").innerHTML = `
       </div>
 
       <div class="field">
+        <label class="label">Género</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Acción y Aventura">
+        </div>
+      </div>
+
+      <div class="field">
         <label class="label">Año de lanzamiento</label>
         <div class="control">
           <input class="input" type="text" placeholder="2013">
