@@ -52,6 +52,7 @@ document.addEventListener("click", function (event) {
     isLoggedIn = false;
     localStorage.setItem("isLoggedIn", "false");
     renderNavbarAuth();
+    location.reload();
   }
 
   if (event.target && event.target.id === "boton-login-modal") {
@@ -59,6 +60,7 @@ document.addEventListener("click", function (event) {
   isLoggedIn = true;
   localStorage.setItem("isLoggedIn", "true");
   renderNavbarAuth();
+  location.reload();
   }
 });
 
