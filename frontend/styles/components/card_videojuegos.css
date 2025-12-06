@@ -4,8 +4,8 @@
     flex: 1 1;
     min-width: 445px;
     max-width: 700px;
-    height: 35vh;
-    min-height: 253px;
+    height: 36vh;
+    min-height: 265px;
     margin: 4px;
     position: relative;
        
@@ -54,4 +54,12 @@
     border-color: var(--tertiary-color);
     color: var(--primary-color);
 
+}
+
+/* Aumentar altura del card en pantallas tamaño tablet */
+@media (max-width: 1100px) and (min-width: 1020px) {
+    .box {
+        height: 40vh;
+        min-height: 320px;
+    }
 }
