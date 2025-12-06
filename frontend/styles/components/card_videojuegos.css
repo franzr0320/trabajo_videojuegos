@@ -40,6 +40,11 @@
    
 }
 
+.genre {
+    font-weight: bold;
+    font-size: 16px;
+}
+
 /* Posición del botón añadir*/
 .boton-añadir {
     position: absolute;
@@ -59,7 +64,7 @@
 /* Aumentar altura del card en pantallas tamaño tablet */
 @media (max-width: 1100px) and (min-width: 1020px) {
     .box {
-        height: 40vh;
-        min-height: 320px;
+        height: 36vh;
+        min-height: 300px;
     }
 }
