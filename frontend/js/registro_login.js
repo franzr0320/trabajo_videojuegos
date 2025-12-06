@@ -137,7 +137,7 @@ document.getElementById("modal-container").innerHTML = `
     <!-- Content ... -->
     <footer class="modal-card-foot">
       <div class="buttons">
-        <button class="button is-success">Iniciar Sesión</button>
+        <button class="button is-success" id="boton-login-modal">Iniciar Sesión</button>
       </div>
     </footer>
   </div>

@@ -14,14 +14,16 @@
 
 /* Estilos para el texto dentro del separador*/
 .texto-separador {
-    color: var(--text-secondary-color)
+    color: var(--text-primary-color);
 
 }
 
 .searchbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: max(6px, 2.5vh);
+    margin-left: 2vw;
 }
 
 /* Estilo para el input de búsqueda */
@@ -58,3 +60,40 @@
 .input::placeholder {
     color: var(--text-tertiary-color)
 } 
+
+/* Estilos para sección mis videojuegos */
+.seccion-mis-videojuegos {
+    height: 50px;
+    width: 150px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5.5vw;
+    border-radius: 8px;
+}
+
+/* Estilos para el texto Mis Videojuegos */
+.boton-misvideojuegos .button.is-primary {
+    color: var(--text-primary-color);
+    background-color: var(--secondary-color);
+    font-size: 16px;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5.5vw;
+    border-radius: 8px;
+
+}
+
+.seccion {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    
+}
