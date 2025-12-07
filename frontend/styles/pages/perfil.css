@@ -46,6 +46,16 @@
     margin: 4px;
     position: relative;
 }
+.boton-editar {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
 
+}
 
+.boton-editar .button .is-primary {
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    color: var(--primary-color);
 
+}
