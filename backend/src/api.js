@@ -16,7 +16,7 @@ app.get('/api/health', (req, res) => {
 });
 
 
-app.use('/api/videojuegos', videojuegosBaseRouter);
+app.use('/api/videojuegos-base', videojuegosBaseRouter);
 
 
 app.use('/api/videojuegos-usuario', videojuegosUsuarioRouter);

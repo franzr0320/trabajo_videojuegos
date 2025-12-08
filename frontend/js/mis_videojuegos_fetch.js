@@ -1,14 +1,18 @@
-const videojuegosBackendURL = "http://localhost:3000/api/videojuegos-base";
+const usuarioID = 1; 
+const misVideojuegosURL = `http://localhost:3000/api/videojuegos-usuario/${usuarioID}`;
 const contenedor = document.querySelector(".contenedor-cajas");
 
-fetch(videojuegosBackendURL).then(function(response) {
+fetch(misVideojuegosURL).then(function(response) {
   return response.json();
-}).then(function(data) {
-  console.log(data);
+})
+.then(function(data) {
+  console.log("Mis videojuegos:", data);
+
   data.forEach(function(v) {
     const html = `
       <div class="box">
         <article class="media">
+
           <div class="media-left">
             <figure class="image is-128x128">
               <img src="${v.portada}" alt="${v.titulo}">
@@ -32,11 +36,17 @@ fetch(videojuegosBackendURL).then(function(response) {
             <div class="boton-añadir abrir-modal-añadir">
               <button class="button is-primary is-small">+ Añadir</button>
             </div>
+
           </div>
+
         </article>
       </div>
     `;
 
     contenedor.innerHTML += html;
   });
+})
+
+.catch(function(err) {
+  console.error("Error al cargar mis videojuegos:", err);
 });

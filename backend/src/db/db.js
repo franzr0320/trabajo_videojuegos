@@ -10,12 +10,12 @@ const dbClient = new Pool({
 });
 
 async function getAllVideojuegosBase() {
-  const result = await dbClient.query('SELECT * FROM videojuegos');
+  const result = await dbClient.query('SELECT * FROM videojuegos_base');
   return result.rows;
 }
 
 async function getOneVideojuegoBase(id) {
-  const result = await dbClient.query('SELECT * FROM videojuegos WHERE id = $1 LIMIT 1', [id]);
+  const result = await dbClient.query('SELECT * FROM videojuegos_base WHERE id = $1 LIMIT 1', [id]);
   return result.rows[0];
   
 }
@@ -29,7 +29,7 @@ async function createVideojuegoBase(
   portada
 ) {
   const result = await dbClient.query(
-    'INSERT INTO videojuegos(titulo, genero, anio, historia_principal, descripcion, portada) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', 
+    'INSERT INTO videojuegos_base(titulo, genero, anio, historia_principal, descripcion, portada) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', 
     [titulo, genero, anio, historia_principal, descripcion, portada]);
 
   
@@ -40,7 +40,7 @@ async function createVideojuegoBase(
 }
 
 async function deleteVideojuegoBase(id) {
-  const result = await dbClient.query('DELETE FROM videojuegos WHERE id = $1', [id]);
+  const result = await dbClient.query('DELETE FROM videojuegos_base WHERE id = $1', [id]);
   
   if (result.rowCount === 0) {
     return undefined;
@@ -58,7 +58,7 @@ async function updateVideojuegoBase(
   descripcion,
   portada
 ) {
-  const result = await dbClient.query( 'UPDATE videojuegos SET titulo = $1, genero = $2, anio = $3, historia_principal = $4, descripcion = $5, portada = $6 WHERE id = $7 RETURNING *',
+  const result = await dbClient.query( 'UPDATE videojuegos_base SET titulo = $1, genero = $2, anio = $3, historia_principal = $4, descripcion = $5, portada = $6 WHERE id = $7 RETURNING *',
     [titulo, genero, anio, historia_principal, descripcion, portada, id]);
 
   if (result.rowCount === 0) {

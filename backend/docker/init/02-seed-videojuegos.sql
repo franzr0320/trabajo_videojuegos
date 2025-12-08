@@ -1,4 +1,4 @@
-INSERT INTO videojuegos (titulo, genero, anio, historia_principal, descripcion, portada) VALUES
+INSERT INTO videojuegos_base (titulo, genero, anio, historia_principal, descripcion, portada) VALUES
 ('Minecraft', 'Sandbox', 2011, 132, 'Explora mundos generados al azar y construye mientras sobrevives recolectando recursos.', '../img/portadas/1.jpg'),
 ('Monster Hunter Wilds', 'RPG', 2025, 18, 'Cazadores recorren territorios amplios y enfrentan criaturas enormes en entornos dinámicos.', '../img/portadas/2.jpg'),
 ('Assassin’s Creed Shadows', 'Acción/Sigilo', 2025, 34, 'Un samurái y una asesina buscan justicia en un Japón feudal lleno de intriga y combates.', '../img/portadas/3.jpg'),
