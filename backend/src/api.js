@@ -51,6 +51,26 @@ app.post('/api/videojuegos/', async (req, res) => {
     
   }
 
+  // Validar que genero sea un string no vacío
+  if (typeof req.body.genero !== "string" || req.body.genero.trim().length === 0) {
+    return res.status(400).json({ error: "El género debe ser un texto válido" });
+  }
+
+  // Validar que anio sea un número
+  if (isNaN(req.body.anio)) {
+    return res.status(400).json({ error: "El año debe ser un número" });
+  }
+  
+  // Validar que historia_principal sea número y mayor o igual a 0
+  if (isNaN(req.body.historia_principal) || req.body.historia_principal < 0) {
+    return res.status(400).json({ error: "La historia principal debe ser un número mayor o igual a 0" });
+  }
+
+  // Validar que la descripción no pase los 103 caracteres
+  if (req.body.descripcion.length > 108) {
+    return res.status(400).json({ error: "La descripción no puede superar los 107 caracteres" });
+  }
+
   const videojuego = await createVideojuego(
     req.body.titulo,
     req.body.genero,
@@ -88,6 +108,26 @@ app.put('/api/videojuegos/:id', async (req, res) => {
       !req.body.descripcion ||
       !req.body.portada) {
     return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  // Validar que genero sea un string no vacío
+  if (typeof req.body.genero !== "string" || req.body.genero.trim().length === 0) {
+    return res.status(400).json({ error: "El género debe ser un texto válido" });
+  }
+
+  // Validar que anio sea un número
+  if (isNaN(req.body.anio)) {
+    return res.status(400).json({ error: "El año debe ser un número" });
+  }
+  
+  // Validar que historia_principal sea número y mayor o igual a 0
+  if (isNaN(req.body.historia_principal) || req.body.historia_principal < 0) {
+    return res.status(400).json({ error: "La historia principal debe ser un número mayor o igual a 0" });
+  }
+
+  // Validar que la descripción no pase los 103 caracteres
+  if (req.body.descripcion.length > 108) {
+    return res.status(400).json({ error: "La descripción no puede superar los 107 caracteres" });
   }
 
   const videojuego = await updateVideojuego(
