@@ -1,11 +1,21 @@
 const videojuegosBackendURL = "http://localhost:3000/api/videojuegos-base";
 const contenedor = document.querySelector(".contenedor-cajas");
+const searchInput = document.querySelector("#searchBar");
+
+let videojuegosBase = [];
 
 fetch(videojuegosBackendURL).then(function(response) {
   return response.json();
-}).then(function(data) {
-  console.log(data);
-  data.forEach(function(v) {
+})
+  .then(function(data) {
+    videojuegosBase = data; 
+    renderVideojuegos(videojuegosBase);
+  });
+
+function renderVideojuegos(lista) {
+  contenedor.innerHTML = ""; 
+
+  lista.forEach(function(v) {
     const html = `
       <div class="box">
         <article class="media">
@@ -39,4 +49,20 @@ fetch(videojuegosBackendURL).then(function(response) {
 
     contenedor.innerHTML += html;
   });
-});
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    const texto = searchInput.value.toLowerCase();
+
+    const filtrados = videojuegosBase.filter(function(v) {
+      return (
+        v.titulo.toLowerCase().includes(texto) ||
+        v.genero.toLowerCase().includes(texto) ||
+        v.descripcion.toLowerCase().includes(texto)
+      );
+    });
+
+    renderVideojuegos(filtrados);
+  });
+}
