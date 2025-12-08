@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 3000;
 const {
   getAllVideojuegos,
   getOneVideojuego,
-  createVideojuego
+  createVideojuego,
+  deleteVideojuego
 } = require('./db/db')
 
 app.get('/api/health', (req, res) => {
@@ -63,6 +64,17 @@ app.post('/api/videojuegos/', async (req, res) => {
   }
   res.json({videojuego});
 
+});
+
+//delete videojuego
+app.delete('/api/videojuegos/:id', async (req, res) => {
+
+  const videojuego = await deleteVideojuego(req.params.id);
+
+  if (!videojuego) {
+    return res.status(404).json({ error: 'Videojuego id: ' + req.params.id + ' not found'});
+  }
+  res.json({ status: 'OK', id: videojuego });
 });
 
 app.listen(PORT, () => {

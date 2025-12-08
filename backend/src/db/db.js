@@ -39,8 +39,19 @@ async function createVideojuego(
   return result.rows[0];
 }
 
+async function deleteVideojuego(id) {
+  const result = await dbClient.query('DELETE FROM videojuegos WHERE id = $1', [id]);
+  
+  if (result.rowCount === 0) {
+      return undefined;
+  }
+  return id;
+  
+}
+
 module.exports = {
   getAllVideojuegos,
   getOneVideojuego,
-  createVideojuego
+  createVideojuego,
+  deleteVideojuego
 }
