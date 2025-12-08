@@ -20,7 +20,27 @@ async function getOneVideojuego(id) {
   
 }
 
+async function createVideojuego(
+  titulo,
+  genero,
+  anio,
+  historia_principal,
+  descripcion,
+  portada
+) {
+  const result = await dbClient.query(
+    'INSERT INTO videojuegos(titulo, genero, anio, historia_principal, descripcion, portada) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', 
+    [titulo, genero, anio, historia_principal, descripcion, portada]);
+
+  
+  if (result.rowCount === 0) {
+    return undefined;
+  } 
+  return result.rows[0];
+}
+
 module.exports = {
   getAllVideojuegos,
-  getOneVideojuego
+  getOneVideojuego,
+  createVideojuego
 }

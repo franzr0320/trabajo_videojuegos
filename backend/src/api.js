@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 3000;
 
 const {
   getAllVideojuegos,
-  getOneVideojuego
+  getOneVideojuego,
+  createVideojuego
 } = require('./db/db')
 
 app.get('/api/health', (req, res) => {
@@ -32,6 +33,35 @@ app.get('/api/videojuegos/:id', async (req, res) => {
 
   }
   res.json(videojuego);
+
+});
+
+//insert videojuego
+app.post('/api/videojuegos/', async (req, res) => {
+
+  if(!req.body.titulo ||
+    !req.body.genero ||
+    !req.body.anio ||
+    !req.body.historia_principal ||
+    !req.body.descripcion || 
+    !req.body.portada) {
+    return res.status(400).json({ error: 'Missing required fields'});
+    
+  }
+
+  const videojuego = await createVideojuego(
+    req.body.titulo,
+    req.body.genero,
+    req.body.anio,
+    req.body.historia_principal,
+    req.body.descripcion,
+    req.body.portada
+  );
+
+  if (!videojuego) {
+    return res.status(500).json({ error: 'Failed ton create videojuego'});
+  }
+  res.json({videojuego});
 
 });
 
