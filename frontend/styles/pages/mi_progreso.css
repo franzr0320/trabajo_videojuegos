@@ -1,0 +1,23 @@
+.separador-pagina-progreso {
+    height: 8vh;
+    min-height: 48px;
+    margin-top: max(6px, 2.5vh);
+    margin-bottom: max(6px, 2.5vh);
+    margin-left: max(6px, 4vw);
+    margin-right: max(6px, 4vw);
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* Estilos para el texto dentro del separador*/
+.texto-separador {
+    color: var(--text-primary-color);
+}
+
+.is-50x50 {
+    height: 50px;
+    width: 50px;
+}
