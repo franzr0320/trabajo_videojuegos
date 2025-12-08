@@ -92,6 +92,10 @@ app.post('/api/videojuegos/', async (req, res) => {
 //delete videojuego
 app.delete('/api/videojuegos/:id', async (req, res) => {
 
+  if (req.params.id <= 60) {
+    return res.status(403).json({ error: "No se puede eliminar videojuegos predeterminados" });
+  }
+
   const videojuego = await deleteVideojuego(req.params.id);
 
   if (!videojuego) {
@@ -102,6 +106,10 @@ app.delete('/api/videojuegos/:id', async (req, res) => {
 
 //update videojuego
 app.put('/api/videojuegos/:id', async (req, res) => {
+
+  if (req.params.id <= 60) {
+    return res.status(403).json({ error: "No se puede eliminar videojuegos predeterminados" });
+  }
 
   if (!req.body.titulo ||
       !req.body.genero ||
