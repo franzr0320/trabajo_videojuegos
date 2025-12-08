@@ -10,7 +10,7 @@ fetch(misVideojuegosURL).then(function(response) {
 
   data.forEach(function(v) {
     const html = `
-      <div class="box">
+      <div class="box" data-id="${v.id}">
         <article class="media">
 
           <div class="media-left">
@@ -53,4 +53,36 @@ fetch(misVideojuegosURL).then(function(response) {
 
 .catch(function(err) {
   console.error("Error al cargar mis videojuegos:", err);
+});
+
+
+document.addEventListener("click", function (event) {
+
+  // si el botón dice "Eliminar"
+  if (event.target.textContent === "Eliminar") {
+
+    // agarro la tarjeta del videojuego
+    const card = event.target.closest(".box");
+
+    // saco el id del videojuego
+    const idVideojuego = card.getAttribute("data-id");
+
+    // confirmación simple
+    if (!confirm("¿Seguro que quieres eliminar este videojuego?")) return;
+
+    // hago el delete al backend
+    fetch(`http://localhost:3000/api/videojuegos-usuario/${usuarioID}/${idVideojuego}`, {
+    method: "DELETE"
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+    console.log("Eliminado:", data);
+
+    // saco la tarjeta de la página
+    card.remove();
+    })
+    .catch(function(err) {
+    console.error("Error:", err);
+    });
+  }
 });
