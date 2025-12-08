@@ -8,11 +8,22 @@ CREATE TABLE IF NOT EXISTS usuarios (
   pais VARCHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS videojuegos (
+CREATE TABLE IF NOT EXISTS videojuegos_base (
   id SERIAL PRIMARY KEY,
   titulo VARCHAR(100) NOT NULL,
   genero VARCHAR(50) NOT NULL,
-  anio INT NOT NULL NOT NULL,
+  anio INT NOT NULL,
+  historia_principal INT NOT NULL,
+  descripcion VARCHAR(107) NOT NULL,
+  portada VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS videojuegos_usuario (
+  id SERIAL PRIMARY KEY,
+  usuario_id INT NOT NULL REFERENCES usuarios(id),
+  titulo VARCHAR(100) NOT NULL,
+  genero VARCHAR(50) NOT NULL,
+  anio INT NOT NULL,
   historia_principal INT NOT NULL,
   descripcion VARCHAR(107) NOT NULL,
   portada VARCHAR(200) NOT NULL
@@ -21,7 +32,8 @@ CREATE TABLE IF NOT EXISTS videojuegos (
 CREATE TABLE IF NOT EXISTS progreso (
   id SERIAL PRIMARY KEY,
   usuario_id INT NOT NULL REFERENCES usuarios(id),
-  videojuego_id INT NOT NULL REFERENCES videojuegos(id),
+  videojuego_id INT NOT NULL,
+  tipo_videojuego VARCHAR(20) NOT NULL CHECK (tipo_videojuego IN ('base', 'usuario')),
   plataforma VARCHAR(50) NOT NULL,
   estado_actual VARCHAR(50) NOT NULL,
   tiempo_acumulado INT NOT NULL,
