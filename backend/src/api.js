@@ -9,7 +9,8 @@ const {
   getAllVideojuegos,
   getOneVideojuego,
   createVideojuego,
-  deleteVideojuego
+  deleteVideojuego,
+  updateVideojuego
 } = require('./db/db')
 
 app.get('/api/health', (req, res) => {
@@ -77,6 +78,34 @@ app.delete('/api/videojuegos/:id', async (req, res) => {
   res.json({ status: 'OK', id: videojuego });
 });
 
+//update videojuego
+app.put('/api/videojuegos/:id', async (req, res) => {
+
+  if (!req.body.titulo ||
+      !req.body.genero ||
+      !req.body.anio ||
+      !req.body.historia_principal ||
+      !req.body.descripcion ||
+      !req.body.portada) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  const videojuego = await updateVideojuego(
+    req.params.id,
+    req.body.titulo,
+    req.body.genero,
+    req.body.anio,
+    req.body.historia_principal,
+    req.body.descripcion,
+    req.body.portada
+  );
+
+  if (!videojuego) {
+    return res.status(404).json({ error: 'Videojuego not found' });
+  }
+
+  res.json({ status: 'OK', videojuego: videojuego });
+});
 app.listen(PORT, () => {
   console.log("Server Listening on PORT:", PORT);
 });

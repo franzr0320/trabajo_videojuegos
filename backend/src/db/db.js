@@ -43,15 +43,36 @@ async function deleteVideojuego(id) {
   const result = await dbClient.query('DELETE FROM videojuegos WHERE id = $1', [id]);
   
   if (result.rowCount === 0) {
-      return undefined;
+    return undefined;
   }
   return id;
   
 }
 
+async function updateVideojuego(
+  id,
+  titulo,
+  genero,
+  anio,
+  historia_principal,
+  descripcion,
+  portada
+) {
+  const result = await dbClient.query( 'UPDATE videojuegos SET titulo = $1, genero = $2, anio = $3, historia_principal = $4, descripcion = $5, portada = $6 WHERE id = $7 RETURNING *',
+    [titulo, genero, anio, historia_principal, descripcion, portada, id]);
+
+  if (result.rowCount === 0) {
+    return undefined;
+  }
+
+  return result.rows[0];
+}
+
+
 module.exports = {
   getAllVideojuegos,
   getOneVideojuego,
   createVideojuego,
-  deleteVideojuego
+  deleteVideojuego,
+  updateVideojuego
 }
