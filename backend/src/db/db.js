@@ -14,6 +14,13 @@ async function getAllVideojuegos() {
   return result.rows;
 }
 
+async function getOneVideojuego(id) {
+  const result = await dbClient.query('SELECT * FROM videojuegos WHERE id = $1 LIMIT 1', [id]);
+  return result.rows[0];
+  
+}
+
 module.exports = {
-  getAllVideojuegos
+  getAllVideojuegos,
+  getOneVideojuego
 }
