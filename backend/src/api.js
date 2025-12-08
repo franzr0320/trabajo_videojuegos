@@ -8,11 +8,11 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 const {
-  getAllVideojuegos,
-  getOneVideojuego,
-  createVideojuego,
-  deleteVideojuego,
-  updateVideojuego
+  getAllVideojuegosBase,
+  getOneVideojuegoBase,
+  createVideojuegoBase,
+  deleteVideojuegoBase,
+  updateVideojuegoBase
 } = require('./db/db')
 
 app.get('/api/health', (req, res) => {
@@ -22,14 +22,14 @@ app.get('/api/health', (req, res) => {
 //VIDEOJUEGOS
 //get all videojuegos
 app.get('/api/videojuegos', async (req, res) => {
-  const videojuegos = await getAllVideojuegos();
+  const videojuegos = await getAllVideojuegosBase();
   res.json(videojuegos);
 
 });
 
 //get one videojuego
 app.get('/api/videojuegos/:id', async (req, res) => {
-  const videojuego = await getOneVideojuego(req.params.id);
+  const videojuego = await getOneVideojuegoBase(req.params.id);
   console.log(videojuego);
 
   if (!videojuego) {
@@ -73,7 +73,7 @@ app.post('/api/videojuegos/', async (req, res) => {
     return res.status(400).json({ error: "La descripción no puede superar los 107 caracteres" });
   }
 
-  const videojuego = await createVideojuego(
+  const videojuego = await createVideojuegoBase(
     req.body.titulo,
     req.body.genero,
     req.body.anio,
@@ -96,7 +96,7 @@ app.delete('/api/videojuegos/:id', async (req, res) => {
     return res.status(403).json({ error: "No se puede eliminar videojuegos predeterminados" });
   }
 
-  const videojuego = await deleteVideojuego(req.params.id);
+  const videojuego = await deleteVideojuegoBase(req.params.id);
 
   if (!videojuego) {
     return res.status(404).json({ error: 'Videojuego id: ' + req.params.id + ' not found'});
@@ -140,7 +140,7 @@ app.put('/api/videojuegos/:id', async (req, res) => {
     return res.status(400).json({ error: "La descripción no puede superar los 107 caracteres" });
   }
 
-  const videojuego = await updateVideojuego(
+  const videojuego = await updateVideojuegoBase(
     req.params.id,
     req.body.titulo,
     req.body.genero,

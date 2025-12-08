@@ -9,18 +9,18 @@ const dbClient = new Pool({
 
 });
 
-async function getAllVideojuegos() {
+async function getAllVideojuegosBase() {
   const result = await dbClient.query('SELECT * FROM videojuegos');
   return result.rows;
 }
 
-async function getOneVideojuego(id) {
+async function getOneVideojuegoBase(id) {
   const result = await dbClient.query('SELECT * FROM videojuegos WHERE id = $1 LIMIT 1', [id]);
   return result.rows[0];
   
 }
 
-async function createVideojuego(
+async function createVideojuegoBase(
   titulo,
   genero,
   anio,
@@ -39,7 +39,7 @@ async function createVideojuego(
   return result.rows[0];
 }
 
-async function deleteVideojuego(id) {
+async function deleteVideojuegoBase(id) {
   const result = await dbClient.query('DELETE FROM videojuegos WHERE id = $1', [id]);
   
   if (result.rowCount === 0) {
@@ -49,7 +49,7 @@ async function deleteVideojuego(id) {
   
 }
 
-async function updateVideojuego(
+async function updateVideojuegoBase(
   id,
   titulo,
   genero,
@@ -70,9 +70,9 @@ async function updateVideojuego(
 
 
 module.exports = {
-  getAllVideojuegos,
-  getOneVideojuego,
-  createVideojuego,
-  deleteVideojuego,
-  updateVideojuego
+  getAllVideojuegosBase,
+  getOneVideojuegoBase,
+  createVideojuegoBase,
+  deleteVideojuegoBase,
+  updateVideojuegoBase
 }
