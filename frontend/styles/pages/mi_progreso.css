@@ -18,8 +18,8 @@
 }
 
 .is-50x50 {
-    height: 50px;
-    width: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 .box-progreso {
@@ -31,4 +31,29 @@
     margin: 4px;
     position: relative;
     border-radius: 10px;
+}
+
+.texto-carta-progreso {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.estado {
+    color:antiquewhite;
+}
+
+.plataforma {
+    color:aqua;
+}
+
+.tiempo_jugado {
+    color:azure;
+}
+
+.dificultad {
+    color: chocolate;
+}
+
+.porcentaje {
+    color:burlywood;
 }
