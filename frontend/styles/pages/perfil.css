@@ -51,14 +51,13 @@
 /*estilo boton de editar/eliminar*/
 .boton-editar {
     position: absolute;
-    bottom: 12px;
+    bottom: 50px;
     right: 15px;
-
 }
 
 .boton-editar .button .is-primary {
     background-color: var(--tertiary-color);
     border-color: var(--tertiary-color);
     color: var(--primary-color);
-
+    padding: 0px !important;
 }
