@@ -57,6 +57,24 @@ fetch(misVideojuegosURL).then(function(response) {
 
 
 document.addEventListener("click", function (event) {
+  
+  // si el botón dice "Editar"
+  if (event.target.textContent === "Editar") {
+
+    // agarro la tarjeta del videojuego
+    const card = event.target.closest(".box");
+
+    // saco el id del videojuego
+    const idVideojuego = card.getAttribute("data-id");
+
+    // abro el modal de editar
+    const modalModificar = document.getElementById("modal-modificar");
+    modalModificar.classList.add("is-active");
+
+    // asigno el id al botón guardar dentro del modal
+    const botonGuardar = modalModificar.querySelector(".button.is-link.requiere-login");
+    botonGuardar.dataset.id = idVideojuego;
+  }
 
   // si el botón dice "Eliminar"
   if (event.target.textContent === "Eliminar") {
