@@ -46,6 +46,9 @@
     min-height: 240px;
     margin: auto;
     position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /*estilo boton de editar/eliminar*/
