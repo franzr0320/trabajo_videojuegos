@@ -2,8 +2,8 @@
 .card {
     background-color:white;
     flex: 1 1;
-    min-width: 50vw;
-    max-width: 50vw;    
+    min-width: 60vw;
+    max-width: 60vw;    
     margin: auto;
     height: auto;
 
@@ -40,12 +40,15 @@
 .box {
     background-color: var(--card-color);
     flex: 1 1;
-    max-width: 100vw;
+    min-width: 50vw;
+    max-width: 50vw; 
     height: 10vw;
     min-height: 240px;
-    margin: 4px;
+    margin: auto;
     position: relative;
 }
+
+/*estilo boton de editar/eliminar*/
 .boton-editar {
     position: absolute;
     bottom: 12px;
