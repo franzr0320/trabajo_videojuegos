@@ -58,8 +58,8 @@ router.post('/', async (req, res) => {
     req.body.username,
     req.body.email,
     req.body.contrasena,
-    req.body.genero || "",
-    req.body.pais || ""
+    req.body.genero,
+    req.body.pais""
   );
 
   res.json({ status: "OK", usuario: usuario });
@@ -99,8 +99,8 @@ router.put('/:id', async (req, res) => {
     req.body.username,
     req.body.email,
     req.body.contrasena,
-    req.body.genero || "",
-    req.body.pais || ""
+    req.body.genero,
+    req.body.pais
   );
 
   if (!usuario) {
