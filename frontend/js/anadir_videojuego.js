@@ -90,13 +90,15 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
 
 // MODAL AÑADIR VIDEOJUEGO //
 const modalAñadir = document.getElementById('modal-añadir');
-const botonesAbrir = document.querySelectorAll('.abrir-modal-añadir');
 const botonCerrar = modalAñadir.querySelector('.delete');
 const fondoModal = modalAñadir.querySelector('.modal-background');
 
-botonesAbrir.forEach(boton => {
-boton.onclick = () => modalAñadir.classList.add('is-active');
+document.addEventListener("click", function (event) {
+  if (event.target.closest(".abrir-modal-añadir")) {
+    modalAñadir.classList.add("is-active");
+  }
 });
 
+// CERRAR MODAL //
 botonCerrar.onclick = () => modalAñadir.classList.remove('is-active');
 fondoModal.onclick = () => modalAñadir.classList.remove('is-active');
