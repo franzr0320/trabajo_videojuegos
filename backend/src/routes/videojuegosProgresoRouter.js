@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
   getAllVideojuegosEnProgreso
-} = require("../db/db");
+} = require("../db/progreso");
 
 // get all videojuegos en progreso de un usuario
 router.get("/:usuario_id", async (req, res) => {

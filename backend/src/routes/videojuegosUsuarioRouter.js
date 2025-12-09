@@ -7,7 +7,7 @@ const {
   createVideojuegoUsuario,
   updateVideojuegoUsuario,
   deleteVideojuegoUsuario
-} = require("../db/db");
+} = require("../db/videojuegosUsuario");
 
 // get all videojuego_usuario
 router.get('/:usuario_id', async (req, res) => {
