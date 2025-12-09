@@ -57,6 +57,42 @@ fetch(misVideojuegosURL).then(function(response) {
 
 
 document.addEventListener("click", function (event) {
+  
+  // si el botón dice "Editar"
+  if (event.target.textContent === "Editar") {
+
+    // agarro la tarjeta del videojuego
+    const card = event.target.closest(".box");
+
+    // saco el id del videojuego
+    const idVideojuego = card.getAttribute("data-id");
+
+    // abro el modal de editar
+    const modalModificar = document.getElementById("modal-modificar");
+    modalModificar.classList.add("is-active");
+
+    // asigno el id al botón guardar dentro del modal
+    const botonGuardar = modalModificar.querySelector(".button.is-link.requiere-login");
+    botonGuardar.dataset.id = idVideojuego;
+
+    // Rellenar inputs con datos actuales
+    document.getElementById("edit-titulo").value =
+    card.querySelector("strong").textContent;
+
+    document.getElementById("edit-genero").value =
+      card.querySelector(".genre").textContent.replace("Género: ", "");
+
+    document.getElementById("edit-anio").value =
+      card.querySelector("small").textContent.replace("(", "").replace(")", "");
+
+    document.getElementById("edit-imagen").value =
+      card.querySelector("img").getAttribute("src");
+
+    document.getElementById("edit-historia").value =
+      card.querySelector(".tag").textContent
+        .replace("Tiempo estimado: ", "")
+        .replace(" horas", "");
+  }
 
   // si el botón dice "Eliminar"
   if (event.target.textContent === "Eliminar") {

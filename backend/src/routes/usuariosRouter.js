@@ -7,7 +7,7 @@ const {
   createUsuario,
   updateUsuario,
   deleteUsuario
-} = require("../db/db");
+} = require("../db/usuarios");
 
 // get all usuarios
 router.get('/', async (req, res) => {

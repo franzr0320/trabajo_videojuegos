@@ -7,7 +7,7 @@ const {
   createProgreso,
   updateProgreso,
   deleteProgreso
-} = require("../db/db");
+} = require("../db/progreso");
 
 // get all progreso de un usuario
 router.get('/:usuario_id', async (req, res) => {
