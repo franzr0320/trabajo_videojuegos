@@ -57,3 +57,51 @@
   margin-right: 40px;
   margin-top: 13px;
 }
+
+@media (max-width: 1000px) {
+  .card-imagen {
+    height: 19vh;
+  }
+  .titulo-videojuego {
+    font-size: 30px;
+    top: 40px;
+    left: 280px;
+  }
+  .card-contenido {
+    height: 340px;
+    margin-left: 280px;
+  }
+  .imagen {
+    left: 30px;
+    top: 50px;
+    margin-top: 10px;
+    width: 210px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-imagen {
+    height: 17vh;
+  }
+  .titulo-videojuego {
+    font-size: 28px;
+    top: 40px;
+    left: 250px;
+  }
+
+  .imagen {
+    left: 30px;
+    top: 50px;
+    margin-top: 10px;
+    width: 200px;
+  }
+
+  .card-contenido {
+    height: 360px;
+    margin-left: 250px;
+  }
+  .subtitulo {
+    font-size: 17px;
+    font-weight: bold;
+  }
+}
