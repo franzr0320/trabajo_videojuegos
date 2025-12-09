@@ -1,5 +1,5 @@
 document.getElementById("editar_perfil-container").innerHTML = `
-<div class="modal" id="modal-añadir">
+<div class="modal" id="modal-editar">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
@@ -81,15 +81,15 @@ document.getElementById("editar_perfil-container").innerHTML = `
 </div>
 `;
 
-// MODAL AÑADIR VIDEOJUEGO //
-const modalAñadir = document.getElementById('modal-añadir');
-const botonesAbrir = document.querySelectorAll('.abrir-modal-editar');
-const botonCerrar = modalAñadir.querySelector('.delete');
-const fondoModal = modalAñadir.querySelector('.modal-background');
+// MODAL EDITAR/ELIMINAR PERFIL //
+const modalEditar = document.getElementById('modal-editar');
+const botonesAbrirEditar = document.querySelectorAll('.abrir-modal-editar');
+const botonCerrarEditar = modalEditar.querySelector('.delete');
+const fondoModalEditar = modalEditar.querySelector('.modal-background');
 
-botonesAbrir.forEach(boton => {
-boton.onclick = () => modalAñadir.classList.add('is-active');
+botonesAbrirEditar.forEach(boton => {
+boton.onclick = () => modalEditar.classList.add('is-active');
 });
 
-botonCerrar.onclick = () => modalAñadir.classList.remove('is-active');
-fondoModal.onclick = () => modalAñadir.classList.remove('is-active');
+botonCerrarEditar.onclick = () => modalEditar.classList.remove('is-active');
+fondoModalEditar.onclick = () => modalEditar.classList.remove('is-active');
