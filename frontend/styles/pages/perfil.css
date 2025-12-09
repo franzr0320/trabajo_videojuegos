@@ -3,7 +3,7 @@
     background-color:white;
     flex: 1 1;
     min-width: 60vw;
-    max-width: 60vw;    
+    max-width: 80vw;    
     margin: auto;
     height: auto;
 
@@ -41,7 +41,7 @@
     background-color: var(--card-color);
     flex: 1 1;
     min-width: 50vw;
-    max-width: 50vw; 
+    max-width: 80vw; 
     height: 10vw;
     min-height: 240px;
     margin: auto;
