@@ -40,15 +40,17 @@
 .box-perfil {
     background-color: var(--card-color);
     flex: 1 1;
-    min-width: 50vw;
+    min-width: 70vw;
     max-width: 80vw; 
     height: 10vw;
     min-height: 240px;
     margin: auto;
     position: relative;
+}
+.media-content-perfil{
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow:auto;
+    text-overflow:ellipsis;
 }
 
 /*estilo boton de editar/eliminar*/
