@@ -3,7 +3,7 @@
     background-color:white;
     flex: 1 1;
     min-width: 60vw;
-    max-width: 80vw;    
+    max-width: 70vw;    
     margin: auto;
     height: auto;
 
@@ -40,8 +40,8 @@
 .box-perfil {
     background-color: var(--card-color);
     flex: 1 1;
-    min-width: 70vw;
-    max-width: 80vw; 
+    min-width: 60vw;
+    max-width: 70vw; 
     height: 10vw;
     min-height: 240px;
     margin: auto;
