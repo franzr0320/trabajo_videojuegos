@@ -59,7 +59,7 @@ router.post('/', async (req, res) => {
     req.body.email,
     req.body.contrasena,
     req.body.genero,
-    req.body.pais""
+    req.body.pais
   );
 
   res.json({ status: "OK", usuario: usuario });
