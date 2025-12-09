@@ -32,7 +32,9 @@ router.post('/', async (req, res) => {
   if (!req.body.nombre ||
       !req.body.username ||
       !req.body.email ||
-      !req.body.contrasena) {
+      !req.body.contrasena
+      !req.body.genero ||
+      !req.body.pais) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
@@ -71,7 +73,9 @@ router.put('/:id', async (req, res) => {
   if (!req.body.nombre ||
       !req.body.username ||
       !req.body.email ||
-      !req.body.contrasena) {
+      !req.body.contrasena
+      !req.body.genero ||
+      !req.body.pais) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
