@@ -11,42 +11,37 @@
 		<div id="navbar-container"></div>
     <div id="modal-container"></div>
 
-		<div class="separador-pagina-videojuegos">
-			<h1 class="texto-separador">VIDEOJUEGOS</h1>
-		</div>
-
-
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img
-            src="https://bulma.io/assets/images/placeholders/1280x960.png"
-            alt="Placeholder image"
-          />
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
+    <div class="contenedor-tarjeta">
+      <div class="card">
+        <div class="card-imagen">
+          <div class="titulo-videojuego">
+            <strong>The Last of Us Parte: I</strong> <small class="subtitle" >(2013)</small>
+          </div>          
+        </div>
+        <div class="card-contenido">
+          <div class="media">
+            <div class="imagen">
               <img
-                src="https://bulma.io/assets/images/placeholders/96x96.png"
+                src="../img/tlof.jpg"
                 alt="Placeholder image"
               />
-            </figure>
+            </div>
+            <div class="descripcion">
+              <p class="subtitulo">Género:</p>
+              Acción y Aventura
+            </div>
           </div>
-          <div class="media-content">
-            <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
+          <div class="descripcion">
+            <p class="subtitulo">Historia prinicpal:</p>
+            123 horas
+          </div>
+          <div class="descripcion">
+            <p class="subtitulo">Descripción</p>
+            Ellie emprende un viaje de venganza marcado por dilemas morales y emociones intensas.
           </div>
         </div>
-    
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-          iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-          <a href="#">#responsive</a>
-          <br />
-          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        <div class="boton-añadir abrir-modal-añadir">
+          <button class="button is-primary is-small" data-id="${v.id}">+ Añadir</button>
         </div>
       </div>
     </div>
