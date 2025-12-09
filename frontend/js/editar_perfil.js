@@ -23,6 +23,13 @@ document.getElementById("editar_perfil-container").innerHTML = `
       </div>
 
       <div class="field">
+        <label class="label">NOMBRE</label>
+        <div class="control">
+          <input class="input is-success" type="text">
+        </div>
+      </div>
+
+      <div class="field">
         <label class="label">NOMBRE DE USUARIO</label>
         <div class="control">
           <input class="input is-success" type="text">
