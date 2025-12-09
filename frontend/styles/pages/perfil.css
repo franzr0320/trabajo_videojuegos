@@ -1,5 +1,5 @@
 /* Carta del perfil*/
-.card {
+.card-perfil {
     background-color:white;
     flex: 1 1;
     min-width: 60vw;
@@ -10,7 +10,7 @@
 }
 
 /* Header de la carta */
-.card-header {
+.card-header-perfil {
     background-color: var(--primary-color)
 }
 
@@ -28,16 +28,16 @@
 }
 
 /* Estilo datos del usuario*/
-.title {
+.title-perfil {
     color: black !important;
     font-size: 20px !important;
 }
-.subtitle {
+.subtitle-perfil {
     color: black !important;
     font-size: 15px !important;
 }
 /* caja de videojuegos con mas progreso*/
-.box {
+.box-perfil {
     background-color: var(--card-color);
     flex: 1 1;
     min-width: 50vw;
