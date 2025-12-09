@@ -286,6 +286,25 @@ async function updateProgreso(
   return result.rows[0];
 }
 
+async function getAllVideojuegosEnProgreso(usuario_id) {
+  const result = await dbClient.query(
+    `SELECT v.*, p.plataforma, p.estado_actual, p.tiempo_acumulado, p.dificultad
+    FROM progreso p, videojuegos_base v
+    WHERE p.videojuego_id = v.id
+    AND p.usuario_id = $1
+    AND p.tipo_videojuego = 'base'
+
+    UNION ALL
+
+    SELECT vu.*, p.plataforma, p.estado_actual, p.tiempo_acumulado, p.dificultad
+    FROM progreso p, videojuegos_usuario vu
+    WHERE p.videojuego_id = vu.id
+    AND p.usuario_id = $1
+    AND p.tipo_videojuego = 'usuario'`,
+    [usuario_id]
+  );
+}
+
 module.exports = {
   getAllVideojuegosBase,
   getOneVideojuegoBase,
@@ -307,4 +326,5 @@ module.exports = {
   createProgreso,
   updateProgreso,
   deleteProgreso,
+  getAllVideojuegosEnProgreso
 }
