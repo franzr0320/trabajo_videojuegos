@@ -34,7 +34,7 @@ fetch(misVideojuegosURL).then(function(response) {
             </div>
 
             <div class="boton-añadir abrir-modal-añadir">
-              <button class="button is-primary is-small">+ Añadir</button>
+              <button class="button is-primary is-small" data-id="${v.id}">+ Añadir</button>
             </div>
 
           </div>

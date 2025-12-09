@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 3000;
 // Routes
 const videojuegosBaseRouter = require('./routes/videojuegosBaseRouter');
 const videojuegosUsuarioRouter = require('./routes/videojuegosUsuarioRouter');
+const usuariosRouter = require('./routes/usuariosRouter');
+
 
 app.get('/api/health', (req, res) => {
   res.json({ message: 'Hello from the API'});
@@ -18,8 +20,9 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/videojuegos-base', videojuegosBaseRouter);
 
-
 app.use('/api/videojuegos-usuario', videojuegosUsuarioRouter);
+
+app.use('/api/usuarios', usuariosRouter);
 
 app.listen(PORT, () => {
   console.log("Server Listening on PORT:", PORT);
