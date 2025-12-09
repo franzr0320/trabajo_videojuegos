@@ -11,28 +11,28 @@ document.getElementById("modificar_videojuego-container").innerHTML = `
       <div class="field">
         <label class="label"> Título del Videojuego</label>
         <div class="control">
-          <input class="input" type="text" id="edit-titulo" placeholder="The Last of Us">
+          <input class="input" type="text" id="edit-titulo">
         </div>
       </div>
 
       <div class="field">
         <label class="label">Género</label>
         <div class="control">
-          <input class="input" type="text" id="edit-genero" placeholder="Acción y Aventura">
+          <input class="input" type="text" id="edit-genero">
         </div>
       </div>
 
       <div class="field">
         <label class="label">Año de lanzamiento</label>
         <div class="control">
-          <input class="input" type="text" id="edit-anio" placeholder="2013">
+          <input class="input" type="text" id="edit-anio">
         </div>
       </div>
 
       <div class="field">
         <label class="label">Breve descripción</label>
         <div class="control">
-          <input class="input" type="text" placeholder="125 caracteres MAX">
+          <input class="input" type="text" placeholder=" máximo 107 caracteres ">
         </div>
       </div>
 
