@@ -12,14 +12,14 @@ document.getElementById("modal-container").innerHTML = `
       <div class="field">
         <label class="label">Nombre</label>
         <div class="control">
-          <input class="input is-success" type="text" placeholder="Ingrese su nombre">
+          <input class="input is-success" id="reg-nombre" type="text" placeholder="Ingrese su nombre">
         </div>
       </div>
           
       <div class="field">
         <label class="label">Username</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="text" placeholder="Ingrese un nombre de usuario">
+          <input class="input is-success" id="reg-username" type="text" placeholder="Ingrese un nombre de usuario">
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
@@ -32,7 +32,7 @@ document.getElementById("modal-container").innerHTML = `
       <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="email" placeholder="videogames@email.com">
+          <input class="input is-success" id="reg-email" type="email" placeholder="videogames@email.com">
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -45,7 +45,7 @@ document.getElementById("modal-container").innerHTML = `
       <div class="field">
         <label class="label">Contraseña</label>
         <p class="control has-icons-left">
-          <input class="input is-success" type="password" placeholder="Contraseña">
+          <input class="input is-success" id="reg-contrasena"> type="password" placeholder="Contraseña">
           <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
           </span>
@@ -56,7 +56,7 @@ document.getElementById("modal-container").innerHTML = `
         <label class="label">Género</label>
         <div class="control2">
           <div class="select">
-            <select>
+            <select id="reg-genero">
               <option>Selecciona</option>
               <option>Hombre</option>
               <option>Mujer</option>
@@ -70,7 +70,7 @@ document.getElementById("modal-container").innerHTML = `
         <label class="label">País</label>
         <div class="control2">
           <div class="select">
-            <select>
+            <select id="reg-pais">>
               <option>Selecciona</option>
               <option>Argentina</option>
               <option>Brasil</option>
@@ -94,7 +94,7 @@ document.getElementById("modal-container").innerHTML = `
       
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link">Guardar</button>
+          <button class="button is-link" id="btn-registrar" >Guardar</button>
         </div>
         <div class="control">
           <button class="button is-link is-light">Cancelar</button>
