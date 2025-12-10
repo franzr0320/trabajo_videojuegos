@@ -29,44 +29,48 @@
           <div class="field">
             <label class="label"> Título del Videojuego</label>
             <div class="control">
-              <input class="input" type="text" placeholder="The Last of Us">
+              <input class="input" id="titulo-input" type="text" placeholder="The Last of Us">
             </div>
           </div>
 
           <div class="field">
             <label class="label">Género</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Acción y Aventura">
+              <input class="input" id="genero-input" type="text" placeholder="Acción y Aventura">
             </div>
           </div>
             
           <div class="field">
             <label class="label">Año de lanzamiento</label>
             <div class="control">
-              <input class="input" type="text" placeholder="2013">
+              <input class="input" id="anio-input" placeholder="2013">           
             </div>
           </div>
 
           <div class="field">
             <label class="label">Breve descripción</label>
             <div class="control">
-              <input class="input" type="text" placeholder="125 caracteres MAX">
+              <input class="input" id="descripcion-input" type="text" placeholder="Max 107 caracteres">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Tiempo para completarlo (Hrs.)</label>
+            <div class="control">
+              <input class="input" id="historia-input" placeholder="12">         
             </div>
           </div>
 
           <div class="field">
             <label class="label">Imagen Portada Link </label>
             <div class="control">
-              <input class="input" type="text" placeholder="https://example.com/imagen.jpg">
+              <input class="input" id="portada-input" type="text" placeholder="https://example.com/imagen.jpg">           
             </div>
           </div>
           <br>
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link">Guardar</button>
-            </div>
-            <div class="control">
-              <button class="button is-link is-light">Cancelar</button>
+              <button type="button" class="button is-link" id="btnCrearVideojuego">Guardar</button>            
             </div>
           </div>
         </div>
@@ -78,6 +82,7 @@
     </footer>
 
     <script src="../js/navbar.js"></script>
+    <script src="../js/crear_videojuego_fetch.js"></script>
     <script src="../js/footer.js"></script>
     
   </body>

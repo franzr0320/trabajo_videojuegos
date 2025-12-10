@@ -1,4 +1,4 @@
-const usuarioID = 1; 
+const usuarioID = localStorage.getItem("userId");
 const misVideojuegosURL = `http://localhost:3000/api/videojuegos-usuario/${usuarioID}`;
 const contenedor = document.querySelector(".contenedor-cajas");
 
