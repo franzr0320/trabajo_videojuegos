@@ -28,29 +28,35 @@ router.get('/:usuario_id/:id', async (req, res) => {
 // create videojuego_usuario
 router.post('/', async (req, res) => {
 
-  if (!req.body.usuario_id ||
-      !req.body.titulo ||
-      !req.body.genero ||
-      !req.body.anio ||
-      !req.body.historia_principal ||
-      !req.body.descripcion ||
-      !req.body.portada) {
+  if (
+    !req.body.usuario_id ||
+    !req.body.titulo ||
+    !req.body.genero ||
+    !req.body.anio ||
+    !req.body.historia_principal ||
+    !req.body.descripcion ||
+    !req.body.portada
+  ) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  if (typeof req.body.genero !== "string" || req.body.genero.trim().length === 0) {
+  // Validación de género como string válido
+  if (!isNaN(req.body.genero)) {
     return res.status(400).json({ error: "El género debe ser un texto válido" });
   }
-
-  if (isNaN(req.body.anio)) {
-    return res.status(400).json({ error: "El año debe ser un número" });
+  
+  // Validación de año numérico
+  if (isNaN(req.body.anio) || req.body.historia_principal < 1900) {
+    return res.status(400).json({ error: "El año debe ser un número mayor a 1950" });
   }
 
+  // Validación de historia principal numérica
   if (isNaN(req.body.historia_principal) || req.body.historia_principal < 0) {
     return res.status(400).json({ error: "La historia principal debe ser un número mayor o igual a 0" });
   }
 
-  if (req.body.descripcion.length > 108) {
+  // Validación de longitud de descripción
+  if (req.body.descripcion.length > 107) {
     return res.status(400).json({ error: "La descripción no puede superar los 107 caracteres" });
   }
 
@@ -70,28 +76,35 @@ router.post('/', async (req, res) => {
 // update videojuego_usuario
 router.put('/:usuario_id/:id', async (req, res) => {
 
-  if (!req.body.titulo ||
-      !req.body.genero ||
-      !req.body.anio ||
-      !req.body.historia_principal ||
-      !req.body.descripcion ||
-      !req.body.portada) {
+  if (
+    !req.body.usuario_id ||
+    !req.body.titulo ||
+    !req.body.genero ||
+    !req.body.anio ||
+    !req.body.historia_principal ||
+    !req.body.descripcion ||
+    !req.body.portada
+  ) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  if (typeof req.body.genero !== "string" || req.body.genero.trim().length === 0) {
+  // Validación de género como string válido
+  if (!isNaN(req.body.genero)) {
     return res.status(400).json({ error: "El género debe ser un texto válido" });
   }
-
-  if (isNaN(req.body.anio)) {
-    return res.status(400).json({ error: "El año debe ser un número" });
+  
+  // Validación de año numérico
+  if (isNaN(req.body.anio) || req.body.historia_principal < 1900) {
+    return res.status(400).json({ error: "El año debe ser un número mayor a 1950" });
   }
 
+  // Validación de historia principal numérica
   if (isNaN(req.body.historia_principal) || req.body.historia_principal < 0) {
     return res.status(400).json({ error: "La historia principal debe ser un número mayor o igual a 0" });
   }
 
-  if (req.body.descripcion.length > 108) {
+  // Validación de longitud de descripción
+  if (req.body.descripcion.length > 107) {
     return res.status(400).json({ error: "La descripción no puede superar los 107 caracteres" });
   }
 
