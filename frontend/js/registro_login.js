@@ -70,7 +70,7 @@ document.getElementById("modal-container").innerHTML = `
         <label class="label">País</label>
         <div class="control2">
           <div class="select">
-            <select id="reg-pais">>
+            <select id="reg-pais">
               <option>Selecciona</option>
               <option>Argentina</option>
               <option>Brasil</option>
@@ -116,7 +116,7 @@ document.getElementById("modal-container").innerHTML = `
       <!-- Content ... -->
       <div class="field">
         <p class="control has-icons-left has-icons-right">
-          <input class="input" type="email" placeholder="Email o Username">
+          <input class="input" id="login-user" type="email" placeholder="Email o Username">
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -127,7 +127,7 @@ document.getElementById("modal-container").innerHTML = `
       </div>
       <div class="field">
         <p class="control has-icons-left">
-          <input class="input" type="password" placeholder="Contraseña">
+          <input class="input" id="login-pass" type="password" placeholder="Contraseña">
           <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
           </span>
@@ -219,10 +219,61 @@ botonRegistrar.addEventListener("click", function () {
   .then(function(data) {
 
     if (!data) return;  
-    
+
     console.log("Usuario registrado:", data);
     alert("Registro exitoso");
     modalRegister.classList.remove("is-active");
+  })
+  .catch(function(error) {
+    console.error("Error en el servidor:", error);
+    alert("Error en el servidor");
+  });
+});
+
+// Fetch para LOGIN
+
+const botonLogin = document.getElementById("boton-login-modal");
+
+botonLogin.addEventListener("click", function () {
+
+  const usuario = document.getElementById("login-user").value;
+  const contrasena = document.getElementById("login-pass").value;
+
+  const datosLogin = {
+    usuario: usuario,
+    contrasena: contrasena
+  };
+
+  fetch("http://localhost:3000/api/usuarios/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(datosLogin)
+  })
+  .then(function(res) {
+    if (!res.ok) {
+      alert("Usuario o contraseña incorrectos");
+      return null;
+    }
+    return res.json();
+  })
+  .then(function(data) {
+
+    if (!data) return;
+
+    console.log("Sesión iniciada:", data);
+    alert("Inicio de sesión exitoso");
+    
+    modalLogin.classList.remove("is-active");
+
+    // Guardamos ID del usuario logueado
+    localStorage.setItem("usuarioID", data.id);
+
+    localStorage.setItem("isLoggedIn", "true");
+
+    // Actualizamos la navbar, páginas, etc.
+    location.reload();
   })
   .catch(function(error) {
     console.error("Error en el servidor:", error);

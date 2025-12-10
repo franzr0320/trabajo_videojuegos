@@ -1,5 +1,3 @@
-let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
 document.getElementById("navbar-container").innerHTML = `
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -25,10 +23,14 @@ document.getElementById("navbar-container").innerHTML = `
   </div>
 </nav>
 `;
+document.addEventListener("DOMContentLoaded", renderNavbarAuth);
+const authDiv = document.getElementById("navbar-auth");
+renderNavbarAuth();
+
 
 // Render dinámico según si está logueado o no
 function renderNavbarAuth() {
-  const authDiv = document.getElementById("navbar-auth");
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   if (isLoggedIn) {
     authDiv.innerHTML = `
@@ -49,26 +51,39 @@ function renderNavbarAuth() {
 document.addEventListener("click", function (event) {
   if (event.target && event.target.id === "cerrar-sesion") {
     event.preventDefault();
-    isLoggedIn = false;
     localStorage.setItem("isLoggedIn", "false");
     renderNavbarAuth();
     window.location.href = "./home.html";
   }
 
   if (event.target && event.target.id === "boton-login-modal") {
-  event.preventDefault();
-  isLoggedIn = true;
-  localStorage.setItem("isLoggedIn", "true");
-  renderNavbarAuth();
-  location.reload();
-  }
+    return; 
+}
 });
 
-renderNavbarAuth();
+document.addEventListener("click", function (event) {
+
+  // Abrir modal de registro
+  if (event.target && event.target.id === "abrir-modal-register") {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById("modal-register").classList.add("is-active");
+  }
+
+  // Abrir modal de login
+  if (event.target && event.target.id === "abrir-modal-login") {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById("modal-login").classList.add("is-active");
+  }
+
+});
 
 // Bloquea botones que requieren el Login //
 document.addEventListener("click", function (event) {
-  if (event.target.classList.contains("requiere-login") && !isLoggedIn) {
+  const logged = localStorage.getItem("isLoggedIn") === "true";
+
+  if (event.target.classList.contains("requiere-login") && !logged) {
     event.preventDefault(); 
     alert("Es necesario Iniciar sesión");
   }
@@ -84,5 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("is-active");
   });
 });
+
 
 
