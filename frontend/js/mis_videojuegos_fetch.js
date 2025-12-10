@@ -1,4 +1,4 @@
-const usuarioID = 1; 
+const usuarioID = localStorage.getItem("userId");
 const misVideojuegosURL = `http://localhost:3000/api/videojuegos-usuario/${usuarioID}`;
 const contenedor = document.querySelector(".contenedor-cajas");
 
@@ -34,7 +34,7 @@ fetch(misVideojuegosURL).then(function(response) {
             </div>
 
             <div class="boton-añadir abrir-modal-añadir">
-              <button class="button is-primary is-small">+ Añadir</button>
+              <button class="button is-primary is-small" data-id="${v.id}">+ Añadir</button>
             </div>
 
           </div>

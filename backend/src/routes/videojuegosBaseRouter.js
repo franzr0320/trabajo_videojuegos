@@ -7,7 +7,7 @@ const {
   createVideojuegoBase,
   deleteVideojuegoBase,
   updateVideojuegoBase
-} = require("../db/db");
+} = require("../db/videojuegosBase");
 
 // get all videojuegos_base
 router.get("/", async (req, res) => {
