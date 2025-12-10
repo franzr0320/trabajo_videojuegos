@@ -12,7 +12,7 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
         <label class="label">Plataforma</label>
         <div class="control2">
           <div class="select">
-            <select>
+            <select id="select-plataforma">
               <option>Selecciona</option>
               <option>PC</option>
               <option>PlayStation 5</option>
@@ -41,7 +41,7 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
         <label class="label">Estado Actual</label>
         <div class="control2">
           <div class="select">
-            <select>
+            <select id="select-estado">
               <option>Selecciona</option>
               <option>Jugando</option>                                    
               <option>En pausa</option>
@@ -55,7 +55,7 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
       <div class="field">
         <label class="label">Tiempo acumulado Hrs</label>
         <div class="control">
-          <input class="input is-success" type="text" placeholder="Ej: 12">
+          <input class="input is-success" id="input-tiempo" placeholder="Ej: 12">
         </div>
       </div>
 
@@ -63,7 +63,7 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
         <label class="label">Dificultad</label>
         <div class="control2">
           <div class="select">
-            <select>
+            <select id="select-dificultad">
               <option>Selecciona</option>
               <option>Fácil</option>
               <option>Normal</option>
@@ -76,10 +76,10 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
       
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link requiere-login">Guardar</button>
+          <button class="button is-link requiere-login" id="btn-guardar" data-id="">Guardar</button>
         </div>
         <div class="control">
-          <button class="button is-link is-light">Cancelar</button>
+          <button class="button is-link is-light" id="btn-cancelar">Cancelar</button>
         </div>
       </div>
 
