@@ -22,6 +22,10 @@
     height: 100px;
 }
 
+.progress::-webkit-progress-value {
+    background-color: #bfc7cb;
+}
+
 .box-progreso {
     padding: 15px;
     background-color: var(--card-color);

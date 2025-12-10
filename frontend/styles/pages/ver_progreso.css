@@ -76,7 +76,7 @@
 }
 
 .progress-2::-webkit-progress-value {
-  background-color: var(--tertiary-color)
+  background-color: var(--tertiary-color);
 }
 
 @media (max-width: 1000px) {
