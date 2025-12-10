@@ -75,26 +75,6 @@ document.addEventListener("click", function (event) {
     const botonGuardar = modalModificar.querySelector(".button.is-link.requiere-login");
     botonGuardar.dataset.id = idVideojuego;
 
-    // Rellenar inputs con datos actuales
-    document.getElementById("edit-titulo").value =
-    card.querySelector("strong").textContent;
-
-    document.getElementById("edit-genero").value =
-      card.querySelector(".genre").textContent.replace("Género: ", "");
-
-    document.getElementById("edit-anio").value =
-      card.querySelector("small").textContent.replace("(", "").replace(")", "");
-
-    document.getElementById("edit-tiempo").value =
-      card.querySelector("small").textContent.replace("(", "").replace(")", "");
-
-    document.getElementById("edit-imagen").value =
-      card.querySelector("img").getAttribute("src");
-
-    document.getElementById("edit-historia").value =
-      card.querySelector(".tag").textContent
-        .replace("Tiempo estimado: ", "")
-        .replace(" horas", "");
   }
 
   // si el botón dice "Eliminar"
