@@ -125,4 +125,33 @@ router.delete('/:id', async (req, res) => {
   res.json({ status: "OK", id: usuario.id });
 });
 
+// LOGIN de usuario
+router.post('/login', async (req, res) => {
+  const { usuario, contrasena } = req.body;
+
+  if (!usuario || !contrasena) {
+    return res.status(400).json({ error: "Faltan datos" });
+  }
+
+  const lista = await getAllUsuarios();
+  const user = lista.find(u =>
+    u.username === usuario || u.email === usuario
+  );
+
+  if (!user) {
+    return res.status(404).json({ error: "Usuario no encontrado" });
+  }
+
+  if (user.contrasena !== contrasena) {
+    return res.status(401).json({ error: "Contraseña incorrecta" });
+  }
+
+  res.json({
+    status: "OK",
+    id: user.id,
+    nombre: user.nombre,
+    username: user.username
+  });
+});
+
 module.exports = router;
