@@ -1,6 +1,6 @@
 /* Carta del perfil*/
 .card-perfil {
-    background-color:white;
+    background-color:white !important;
     flex: 1 1;
     min-width: 60vw;
     max-width: 70vw;    
