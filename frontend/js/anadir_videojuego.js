@@ -89,16 +89,69 @@ document.getElementById("anadir_videojuego-container").innerHTML = `
 `;
 
 // MODAL AÑADIR VIDEOJUEGO //
-const modalAñadir = document.getElementById('modal-añadir');
-const botonCerrar = modalAñadir.querySelector('.delete');
-const fondoModal = modalAñadir.querySelector('.modal-background');
+const modalAñadir = document.getElementById("modal-añadir");
+const botonCerrar = modalAñadir.querySelector(".delete");
+const fondoModal = modalAñadir.querySelector(".modal-background");
+const botonGuardar = document.getElementById("btn-guardar");
 
+// ABRIR MODAL Y PASAR ID DEL VIDEOJUEGO
 document.addEventListener("click", function (event) {
-  if (event.target.closest(".abrir-modal-añadir")) {
-    modalAñadir.classList.add("is-active");
+  const contenedor = event.target.closest(".abrir-modal-añadir");
+  if (contenedor) {
+    const boton = contenedor.querySelector("button");
+    if (boton) {
+      const idVideojuego = boton.dataset.id;
+      botonGuardar.dataset.id = idVideojuego;
+      modalAñadir.classList.add("is-active");
+    }
   }
 });
 
-// CERRAR MODAL //
-botonCerrar.onclick = () => modalAñadir.classList.remove('is-active');
-fondoModal.onclick = () => modalAñadir.classList.remove('is-active');
+// CERRAR MODAL
+botonCerrar.onclick = () => modalAñadir.classList.remove("is-active");
+fondoModal.onclick = () => modalAñadir.classList.remove("is-active");
+document.getElementById("btn-cancelar").onclick = () => modalAñadir.classList.remove("is-active");
+
+botonGuardar.addEventListener("click", function () {
+
+  const usuarioID = localStorage.getItem("userId");
+  const videojuegoID = botonGuardar.dataset.id;
+
+  const plataforma = document.getElementById("select-plataforma").value;
+  const estado = document.getElementById("select-estado").value;
+  const tiempo = document.getElementById("input-tiempo").value;
+  const dificultad = document.getElementById("select-dificultad").value;
+
+  const nuevoProgreso = {
+    usuario_id: usuarioID, 
+    videojuego_id: videojuegoID,
+    tipo_videojuego: "base",
+    plataforma: plataforma,
+    estado_actual: estado,
+    tiempo_acumulado: tiempo,
+    dificultad: dificultad
+  };
+
+
+  fetch("http://localhost:3000/api/progreso", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(nuevoProgreso)
+  })
+    .then(function (response) {
+      return response.json().then(function (data) {
+        if (!response.ok) {
+          alert("Error: " + data.error);
+          return;
+        }
+        console.log("Progreso añadido:", data);
+        alert("Progreso añadido correctamente!");
+        modalAñadir.classList.remove("is-active");
+      });
+    })
+    .catch(function (err) {
+      console.error("Error al añadir progreso:", err);
+      alert("Hubo un problema al caragr el progreso.");
+    });
+
+});

@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
       !req.body.tipo_videojuego ||
       !req.body.plataforma ||
       !req.body.estado_actual ||
-      req.body.tiempo_acumulado === "" ||
+      !req.body.tiempo_acumulado ||
       !req.body.dificultad) {
     return res.status(400).json({ error: "Missing required fields" });
   }
