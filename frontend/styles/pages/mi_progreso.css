@@ -92,3 +92,11 @@
     color: var(--primary-color);
 
 }
+
+/* Aumentar altura del card en pantallas tamaño tablet */
+@media (max-width: 1300px) {
+    .box-progreso {
+        height: 34vh;
+        min-height: 160px;
+    }
+}
