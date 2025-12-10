@@ -11,7 +11,7 @@
 		<div id="navbar-container"></div>
     <div id="modal-container"></div>
 
-    <div class="contenedor-tarjeta">
+    <div class="contenedor-progreso">
       <div class="card">
         <div class="card-imagen">
           <div class="titulo-videojuego">
@@ -39,15 +39,15 @@
           <div class="descripcion">
             <p class="subtitulo">Dificultad: Fácil</p>
           </div>
-        </div>
-        <div class="boton-añadir abrir-modal-añadir">
-          <button class="button is-primary is-small" data-id="${v.id}">+ Añadir</button>
-        </div>
-        
+          <div class="descripcion">
+            <p class="subtitulo">Avance:</p>
+          </div>
+          <div class="div-progreso">
+            <progress class="progress-2 " value="60" max="100"></progress>
+          </div>
+        </div>        
       </div>
     </div>
-
-    <div id="anadir_videojuego-container"></div>
 
 		<footer class="footer">
 		  <div id="footer-container"></div>
@@ -55,9 +55,6 @@
     
 		<script src="../js/navbar.js"></script>
 		<script src="../js/registro_login.js"></script>
-    <script src="../js/login_fetch.js"></script>
-    <script src="../js/registro_fetch.js"></script>
-    <script src="../js/anadir_videojuego.js"></script>
 		<script src="../js/footer.js"></script>
 	</body>
 </html>

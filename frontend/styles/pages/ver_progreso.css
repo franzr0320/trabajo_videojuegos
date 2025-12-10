@@ -1,11 +1,11 @@
-.contenedor-tarjeta {
+.contenedor-progreso {
   padding-left: 8vw;
   padding-right: 8vw;
   padding-top: 6vh;
   position: relative;
 }
 
-.card-imagen {
+.carta-imagen {
   background-color: var(--secondary-color);
   height: 15vh;
   min-height: 100px;
@@ -15,7 +15,7 @@
   
 }
 
-.card-contenido {
+.carta-contenido {
   background-color: var(--card-color);
   height: 310px;
   margin-left: 300px;
@@ -23,7 +23,7 @@
   
 }
 
-.card {
+.carta {
   background-color: var(--card-color)
 }
  
@@ -56,6 +56,27 @@
   font-family: Arial, Helvetica, sans-serif;
   margin-right: 40px;
   margin-top: 13px;
+}
+
+.div-progreso {
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.progress-2 {
+  appearance: none;
+  height: 30px;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+} 
+
+.progress-2::-webkit-progress-bar {
+  background-color: #858585; 
+}
+
+.progress-2::-webkit-progress-value {
+  background-color: var(--tertiary-color)
 }
 
 @media (max-width: 1000px) {
