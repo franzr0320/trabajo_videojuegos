@@ -57,3 +57,34 @@
 .porcentaje {
     color:burlywood;
 }
+
+/* Estilos para la posición botón eliminar */
+.boton-eliminar-progreso {
+    position: absolute;
+    bottom: 37px;
+    right: 80px;
+
+}
+
+/* Estilos para el botón eliminar */
+.boton-eliminar-progreso .button.is-primary {
+    background-color: #d85454;
+    color: var(--primary-color);
+
+}
+
+/* Posición del botón añadir*/
+.boton-editar-progreso {
+    position: absolute;
+    bottom: 37px;
+    right: 15px;
+
+}
+
+/* Estilos para el botón añadir - colores*/
+.boton-editar-progreso .button.is-primary {
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    color: var(--primary-color);
+
+}
