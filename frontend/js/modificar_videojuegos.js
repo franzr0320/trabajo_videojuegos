@@ -75,3 +75,47 @@ boton.onclick = () => modalModificar.classList.add('is-active');
 botonCerrar.onclick = () => modalModificar.classList.remove('is-active');
 fondoModal.onclick = () => modalModificar.classList.remove('is-active');
 
+const botonGuardarEditar = document.querySelector("#btn-guardar-editar");
+
+if (botonGuardarEditar) {
+  botonGuardarEditar.addEventListener("click", function () {
+
+    const usuarioID = localStorage.getItem("userId");
+    const idVideojuego = botonGuardarEditar.dataset.id;
+
+    const actualizado = {
+      usuario_id: usuarioID,
+      titulo: document.querySelector("#edit-titulo").value,
+      genero: document.querySelector("#edit-genero").value,
+      anio: document.querySelector("#edit-anio").value,
+      historia_principal: document.querySelector("#edit-tiempo").value,
+      descripcion: document.querySelector("#edit-descripcion").value,
+      portada: document.querySelector("#edit-imagen").value
+    };
+
+    fetch(`http://localhost:3000/api/videojuegos-usuario/${usuarioID}/${idVideojuego}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(actualizado)
+    })
+      .then(function (response) {
+        return response.json().then(function (data) {
+
+          if (!response.ok) {
+            alert("Error: " + data.error);
+            return;
+          }
+
+          console.log("Videojuego actualizado:", data);
+          alert("¡Videojuego actualizado correctamente!");
+          modalModificar.classList.remove("is-active");
+          location.reload();
+        });
+      })
+      .catch(function (error) {
+        console.error("Error al actualizar videojuego:", error);
+        alert("Hubo un problema al actualizar el videojuego");
+      });
+
+  });
+}
