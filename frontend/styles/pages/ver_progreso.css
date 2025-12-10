@@ -1,0 +1,107 @@
+.contenedor-tarjeta {
+  padding-left: 8vw;
+  padding-right: 8vw;
+  padding-top: 6vh;
+  position: relative;
+}
+
+.card-imagen {
+  background-color: var(--secondary-color);
+  height: 15vh;
+  min-height: 100px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+  
+}
+
+.card-contenido {
+  background-color: var(--card-color);
+  height: 310px;
+  margin-left: 300px;
+  border-bottom-right-radius: 10px;
+  
+}
+
+.card {
+  background-color: var(--card-color)
+}
+ 
+.imagen {
+  position: absolute;
+  left: 30px;
+  top: 40px;
+  margin-top: 10px;
+  width: 230px;
+}
+
+.titulo-videojuego {
+  position: absolute;
+  top: 35px;
+  left: 300px;
+  margin-right: 10px;
+  font-size: 37px;
+  color: var(--text-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.subtitulo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.descripcion {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 40px;
+  margin-top: 13px;
+}
+
+@media (max-width: 1000px) {
+  .card-imagen {
+    height: 19vh;
+  }
+  .titulo-videojuego {
+    font-size: 30px;
+    top: 40px;
+    left: 280px;
+  }
+  .card-contenido {
+    height: 340px;
+    margin-left: 280px;
+  }
+  .imagen {
+    left: 30px;
+    top: 50px;
+    margin-top: 10px;
+    width: 210px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-imagen {
+    height: 17vh;
+  }
+  .titulo-videojuego {
+    font-size: 28px;
+    top: 40px;
+    left: 250px;
+  }
+
+  .imagen {
+    left: 30px;
+    top: 50px;
+    margin-top: 10px;
+    width: 200px;
+  }
+
+  .card-contenido {
+    height: 360px;
+    margin-left: 250px;
+  }
+  .subtitulo {
+    font-size: 17px;
+    font-weight: bold;
+  }
+}
