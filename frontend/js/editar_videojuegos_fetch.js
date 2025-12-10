@@ -37,7 +37,7 @@ fetch(misVideojuegosURL).then(function(response) {
               <button class="button is-primary is-small">Editar</button>
             </div>
 
-            <div class="boton-eliminar abrir-modal-añadir">
+            <div class="boton-eliminar">
               <button class="button is-primary is-small">Eliminar</button>
             </div>
 

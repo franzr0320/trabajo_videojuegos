@@ -22,6 +22,10 @@
     height: 100px;
 }
 
+.progress::-webkit-progress-value {
+    background-color: #bfc7cb;
+}
+
 .box-progreso {
     padding: 15px;
     background-color: var(--card-color);
@@ -34,8 +38,8 @@
 }
 
 .texto-carta-progreso {
-    font-weight: bold;
-    font-size: 16px;
+    font-size: bold;
+    font-size: 14px;
 }
 
 .estado {
@@ -56,4 +60,43 @@
 
 .porcentaje {
     color:burlywood;
+}
+
+/* Estilos para la posición botón eliminar */
+.boton-eliminar-progreso {
+    position: absolute;
+    bottom: 37px;
+    right: 80px;
+
+}
+
+/* Estilos para el botón eliminar */
+.boton-eliminar-progreso .button.is-primary {
+    background-color: #d85454;
+    color: var(--primary-color);
+
+}
+
+/* Posición del botón añadir*/
+.boton-editar-progreso {
+    position: absolute;
+    bottom: 37px;
+    right: 15px;
+
+}
+
+/* Estilos para el botón añadir - colores*/
+.boton-editar-progreso .button.is-primary {
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    color: var(--primary-color);
+
+}
+
+/* Aumentar altura del card en pantallas tamaño tablet */
+@media (max-width: 1300px) {
+    .box-progreso {
+        height: 34vh;
+        min-height: 160px;
+    }
 }
