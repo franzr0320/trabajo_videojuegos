@@ -85,6 +85,9 @@ document.addEventListener("click", function (event) {
     document.getElementById("edit-anio").value =
       card.querySelector("small").textContent.replace("(", "").replace(")", "");
 
+    document.getElementById("edit-tiempo").value =
+      card.querySelector("small").textContent.replace("(", "").replace(")", "");
+
     document.getElementById("edit-imagen").value =
       card.querySelector("img").getAttribute("src");
 
