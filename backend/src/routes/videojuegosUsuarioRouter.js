@@ -46,8 +46,8 @@ router.post('/', async (req, res) => {
   }
   
   // Validación de año numérico
-  if (isNaN(req.body.anio) || req.body.historia_principal < 1900) {
-    return res.status(400).json({ error: "El año debe ser un número mayor a 1950" });
+  if (isNaN(req.body.anio)) {
+    return res.status(400).json({ error: "El año debe ser un número" });
   }
 
   // Validación de historia principal numérica
@@ -94,8 +94,8 @@ router.put('/:usuario_id/:id', async (req, res) => {
   }
   
   // Validación de año numérico
-  if (isNaN(req.body.anio) || req.body.historia_principal < 1900) {
-    return res.status(400).json({ error: "El año debe ser un número mayor a 1950" });
+  if (isNaN(req.body.anio)) {
+    return res.status(400).json({ error: "El año debe ser un número" });
   }
 
   // Validación de historia principal numérica
