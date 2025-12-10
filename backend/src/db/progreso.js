@@ -56,8 +56,23 @@ async function createProgreso(
   tiempo_acumulado,
   dificultad
 ) {
+
+  const existe = await dbClient.query(
+    'SELECT id FROM progreso WHERE usuario_id = $1 AND videojuego_id = $2',
+    [usuario_id, videojuego_id]
+  );
+
+  if (existe.rows.length > 0) {
+    // ya existe → no creamos otro
+    return { error: "PROGRESO_DUPLICADO" };
+  }
+
+  // 2️⃣ Si no existe → creamos el progreso normalmente
   const result = await dbClient.query(
-    'INSERT INTO progreso (usuario_id, videojuego_id, tipo_videojuego, plataforma, estado_actual, tiempo_acumulado, dificultad) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+    `INSERT INTO progreso 
+     (usuario_id, videojuego_id, tipo_videojuego, plataforma, estado_actual, tiempo_acumulado, dificultad) 
+     VALUES ($1, $2, $3, $4, $5, $6, $7)
+     RETURNING *`,
     [
       usuario_id,
       videojuego_id,
@@ -69,13 +84,10 @@ async function createProgreso(
     ]
   );
 
-  if (result.rowCount === 0) {
-    return undefined;
-  }
+  if (result.rowCount === 0) return undefined;
 
   return result.rows[0];
 }
-
 
 // delete progreso
 async function deleteProgreso(id, usuario_id) {

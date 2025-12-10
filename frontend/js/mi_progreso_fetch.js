@@ -30,9 +30,9 @@ fetch(url)
                 <strong>${item.titulo}</strong> <small>(${item.anio})</small> 
                 <br /> <span class="texto-carta-progreso estado">Estado: ${item.estado_actual}</span>
                 <br /> <span class="texto-carta-progreso plataforma">Plataforma: ${item.plataforma}</span>
-                <br /> <span class="texto-carta-progreso tiempo_jugado">Tiempo jugado: ${item.tiempo_acumulado} hs</span>
+                <br /> <span class="texto-carta-progreso tiempo_jugado">Tiempo jugado: ${item.tiempo_acumulado} horas</span>
                 <br /> <span class="texto-carta-progreso dificultad">Dificultad: ${item.dificultad}</span>
-                <br /> <span class="texto-carta-progreso porcentaje">Avance: ${item.porcentaje}%</span>
+                <br /> <span class="texto-carta-progreso porcentaje">Avance: </span>
               </p>
             </div>
           </div>
