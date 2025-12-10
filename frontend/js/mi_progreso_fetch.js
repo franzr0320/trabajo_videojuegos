@@ -15,32 +15,36 @@ fetch(url)
     }
 
     data.forEach(item => {
+      const titulo = item.titulo || item.titulo_usuario;
+      const portada = item.portada || item.portada_usuario;
+      const anio = item.anio || item.anio_usuario;
+      const maximo = item.historia_principal || item.historia_principal_usuario;
+
       const caja = `
       <div class="box-progreso">
         <article class="media">
           <div class="media-left">
             <figure class="image is-50x50">
-              <img src="${item.portada}" alt="Imagen" />                        
+              <img src="${portada}" alt="Imagen" />                        
             </figure>
           </div>
 
           <div class="media-content">
             <div class="content">
               <p>
-                <strong>${item.titulo}</strong> <small>(${item.anio})</small> 
+                <strong>${titulo}</strong> <small>(${anio})</small> 
                 <br /> <span class="texto-carta-progreso estado">Estado: ${item.estado_actual}</span>
                 <br /> <span class="texto-carta-progreso plataforma">Plataforma: ${item.plataforma}</span>
                 <br /> <span class="texto-carta-progreso tiempo_jugado">Tiempo jugado: ${item.tiempo_acumulado} horas</span>
                 <br /> <span class="texto-carta-progreso dificultad">Dificultad: ${item.dificultad}</span>
-                <br /> <span class="texto-carta-progreso porcentaje">Avance: </span>
+                <br /> <span class="texto-carta-progreso avance">Avance: </span>
               </p>
+            </div>
+            <div class="div-barra-progreso">
+              <progress class="progress is-warning" value="${item.tiempo_acumulado}" max="${maximo}"></progress>
             </div>
           </div>
         </article>
-
-        <div class="div-barra-progreso">
-          <progress class="progress is-warning" value="${item.tiempo_acumulado}" max="${item.tiempo_demora}"></progress>
-        </div>
       </div>
       `;
 
