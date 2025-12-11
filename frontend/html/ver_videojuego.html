@@ -1,64 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-		<link rel="stylesheet" href="../styles/main.css">
-		<title>GameTrack.com</title>
-	</head>
-	<body>
-		<div id="navbar-container"></div>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>GameTrack.com</title>
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
     <div id="modal-container"></div>
 
     <div class="contenedor-tarjeta">
       <div class="card">
+
         <div class="card-imagen">
           <div class="titulo-videojuego">
-            <strong>The Last of Us Parte: I</strong> <small class="subtitle" >(2013)</small>
+            <strong id="titulo-videojuego"></strong>
+            <small class="subtitle" id="anio-videojuego"></small>
           </div>          
         </div>
+
         <div class="card-contenido">
+          
           <div class="media">
             <div class="imagen">
-              <img
-                src="../img/tlof.jpg"
-                alt="Placeholder image"
-              />
+              <img id="imagen-videojuego" src="" alt="Imagen del videojuego"/>
             </div>
+
             <div class="descripcion">
               <p class="subtitulo">Género:</p>
-              Acción y Aventura
+              <span id="genero-videojuego"></span>
             </div>
           </div>
+
           <div class="descripcion">
-            <p class="subtitulo">Historia prinicpal:</p>
-            123 horas
+            <p class="subtitulo">Historia principal:</p>
+            <span id="historia-videojuego"></span> horas
           </div>
+
           <div class="descripcion">
             <p class="subtitulo">Descripción</p>
-            Ellie emprende un viaje de venganza marcado por dilemas morales y emociones intensas.
+            <span id="descripcion-videojuego"></span>
           </div>
+
         </div>
-        <div class="boton-añadir abrir-modal-añadir">
-          <button class="button is-primary is-small" data-id="${v.id}">+ Añadir</button>
-        </div>
+
       </div>
     </div>
 
     <div id="anadir_videojuego-container"></div>
 
-		<footer class="footer">
-		  <div id="footer-container"></div>
-		</footer>
-    
-		<script src="../js/global/navbar.js"></script>
-		<script src="../js/global/registro_login.js"></script>
+    <footer class="footer">
+      <div id="footer-container"></div>
+    </footer>
+
+    <script src="../js/global/navbar.js"></script>
+    <script src="../js/global/registro_login.js"></script>
     <script src="../js/login_fetch.js"></script>
     <script src="../js/registro_fetch.js"></script>
     <script src="../js/crear_progreso.js"></script>
-		<script src="../js/global/footer.js"></script>
-	</body>
+    <script src="../js/global/footer.js"></script>
+
+    <!-- ================================
+         SCRIPT PARA CARGAR EL VIDEOJUEGO
+         ================================ -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+
+        // Obtener ID de la URL
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        if (!id) {
+          console.error("No se recibió ID en la URL");
+          return;
+        }
+
+        // Traer datos del backend
+        const res = await fetch(`http://localhost:3000/api/videojuegos-base/${id}`);
+        const data = await res.json();
+
+        // Rellenar el HTML dinámicamente
+        document.getElementById("titulo-videojuego").textContent = data.titulo;
+        document.getElementById("anio-videojuego").textContent = `(${data.anio})`;
+        document.getElementById("imagen-videojuego").src = data.portada;
+        document.getElementById("genero-videojuego").textContent = data.genero;
+        document.getElementById("historia-videojuego").textContent = data.historia_principal;
+        document.getElementById("descripcion-videojuego").textContent = data.descripcion;
+      });
+    </script>
+
+  </body>
 </html>
-	
-  
