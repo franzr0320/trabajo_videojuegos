@@ -8,7 +8,7 @@ document.getElementById("modal-container").innerHTML = `
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <!-- Content ... -->
+      
       <div class="field">
         <label class="label">Nombre</label>
         <div class="control">
@@ -20,12 +20,7 @@ document.getElementById("modal-container").innerHTML = `
         <label class="label">Username</label>
         <div class="control has-icons-left has-icons-right">
           <input class="input is-success" id="reg-username" type="text" placeholder="Ingrese un nombre de usuario">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
+          <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
         </div>
       </div>
           
@@ -33,22 +28,15 @@ document.getElementById("modal-container").innerHTML = `
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
           <input class="input is-success" id="reg-email" type="email" placeholder="videogames@email.com">
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
+          <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
         </div>
       </div>
 
       <div class="field">
         <label class="label">Contraseña</label>
         <p class="control has-icons-left">
-          <input class="input is-success" id="reg-contrasena" type="password"> placeholder="Contraseña">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
+          <input class="input is-success" id="reg-contrasena" type="password" placeholder="Contraseña">
+          <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
         </p>
       </div>
           
@@ -77,7 +65,6 @@ document.getElementById("modal-container").innerHTML = `
               <option>Chile</option>
               <option>Paraguay</option>
               <option>Perú</option>
-              <option>Brasil</option>
             </select>
           </div>
         </div>
@@ -86,15 +73,15 @@ document.getElementById("modal-container").innerHTML = `
       <div class="field">
         <div class="control">
           <label class="checkbox">
-          <input type="checkbox">
-          Acepto los  <a class="enlace" href="#">términos y condiciones</a>
+            <input type="checkbox">
+            Acepto los <a class="enlace" href="#">términos y condiciones</a>
           </label>
         </div>
       </div>
       
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link" id="btn-registrar" >Guardar</button>
+          <button class="button is-link" id="btn-registrar">Guardar</button>
         </div>
         <div class="control">
           <button class="button is-link is-light">Cancelar</button>
@@ -106,35 +93,26 @@ document.getElementById("modal-container").innerHTML = `
 
 <!-- MODAL DE LOGIN -->
 <div class="modal" id="modal-login">
-<div class="modal-background"></div>
+  <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">IDENTIFICATE</p>
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <!-- Content ... -->
       <div class="field">
-        <p class="control has-icons-left has-icons-right">
-          <input class="input" id="login-user" type="email" placeholder="Email o Username">
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
+        <p class="control has-icons-left">
+          <input class="input" id="login-user" type="text" placeholder="Email o Username">
+          <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
         </p>
       </div>
       <div class="field">
         <p class="control has-icons-left">
           <input class="input" id="login-pass" type="password" placeholder="Contraseña">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
+          <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
         </p>
       </div>
     </section>
-    <!-- Content ... -->
     <footer class="modal-card-foot">
       <div class="buttons">
         <button class="button is-success" id="boton-login-modal">Iniciar Sesión</button>
@@ -144,38 +122,38 @@ document.getElementById("modal-container").innerHTML = `
 </div>
 `;
 
-// Modal de LOGIN
+// MODAL LOGIN
 const modalLogin = document.getElementById('modal-login');
-const abrirLogin = document.getElementById('abrir-modal-login');
+const abrirLogin = document.getElementById('abrir-login');
 const cerrarLogin = modalLogin.querySelector('.delete');
 const fondoLogin = modalLogin.querySelector('.modal-background');
 
-abrirLogin.onclick = function() {
-  modalLogin.classList.add('is-active');
-};
+if (abrirLogin) {
+  abrirLogin.onclick = () => modalLogin.classList.add('is-active');
+}
 
-cerrarLogin.onclick = function() {
-  modalLogin.classList.remove('is-active');
-};
+if (cerrarLogin) {
+  cerrarLogin.onclick = () => modalLogin.classList.remove('is-active');
+}
 
-fondoLogin.onclick = function() {
-  modalLogin.classList.remove('is-active');
-};
+if (fondoLogin) {
+  fondoLogin.onclick = () => modalLogin.classList.remove('is-active');
+}
 
-// Modal de REGISTRO
+// MODAL REGISTRO
 const modalRegister = document.getElementById('modal-register');
-const abrirRegister = document.getElementById('abrir-modal-register');
+const abrirRegister = document.getElementById('abrir-register');
 const cerrarRegister = modalRegister.querySelector('.delete');
 const fondoRegister = modalRegister.querySelector('.modal-background');
 
-abrirRegister.onclick = function() {
-  modalRegister.classList.add('is-active');
-};
+if (abrirRegister) {
+  abrirRegister.onclick = () => modalRegister.classList.add('is-active');
+}
 
-cerrarRegister.onclick = function() {
-  modalRegister.classList.remove('is-active');
-};
+if (cerrarRegister) {
+  cerrarRegister.onclick = () => modalRegister.classList.remove('is-active');
+}
 
-fondoRegister.onclick = function() {
-  modalRegister.classList.remove('is-active');
-};
+if (fondoRegister) {
+  fondoRegister.onclick = () => modalRegister.classList.remove('is-active');
+}
