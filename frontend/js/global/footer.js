@@ -1,6 +1,6 @@
 document.getElementById("footer-container").innerHTML = `
 <div class="footer-container">
-  <p>© 2025 MiNombre App. Todos los derechos reservados.</p>
+  <p>© 2025 GameTrack. Todos los derechos reservados.</p>
   <div class="footer-links">
     <a href="">Política de Privacidad</a>
     <a href="">Términos y Condiciones</a>
