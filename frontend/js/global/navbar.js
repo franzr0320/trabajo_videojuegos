@@ -8,7 +8,7 @@ document.getElementById("navbar-container").innerHTML = `
       <span aria-hidden="true"></span>
     </a>
     <a class="navbar-item2" href="./home.html">
-      <span class="has-text-weight-bold is-size-5">*NOMBRE APP*</span>
+      <span class="has-text-weight-bold is-size-5">GameTrack</span>
     </a>
   </div>
 

@@ -28,7 +28,9 @@ function renderVideojuegos(lista) {
           <div class="media-content">
             <div class="content">
               <p>
-                <strong>${v.titulo}</strong>
+                <button class="button is-text titulo-juego" onclick="window.location.href='./ver_videojuego.html?id=${v.id}'">
+                  ${v.titulo}
+                </button>
                 <small>(${v.anio})</small><br>
                 <span class="genre">Género: ${v.genero}</span><br>
                 ${v.descripcion}<br><br>

@@ -3,9 +3,37 @@ const dbClient = require("./db");
 // get all progreso
 async function getAllProgreso(usuario_id) {
   const result = await dbClient.query(
-    'SELECT * FROM progreso WHERE usuario_id = $1',
+    `SELECT 
+       p.id,
+       p.usuario_id,
+       p.videojuego_id,
+       p.tipo_videojuego,
+       p.plataforma,
+       p.estado_actual,
+       p.tiempo_acumulado,
+       p.dificultad,
+
+       vb.titulo AS titulo,
+       vb.portada AS portada,
+       vb.anio AS anio,
+       vb.historia_principal AS historia_principal,
+
+       vu.titulo AS titulo_usuario,
+       vu.portada AS portada_usuario,
+       vu.anio AS anio_usuario,
+       vu.historia_principal AS historia_principal_usuario
+
+     FROM progreso p
+     LEFT JOIN videojuegos_base vb 
+       ON p.videojuego_id = vb.id AND p.tipo_videojuego = 'base'
+
+     LEFT JOIN videojuegos_usuario vu 
+       ON p.videojuego_id = vu.id AND p.tipo_videojuego = 'usuario'
+
+     WHERE p.usuario_id = $1`,
     [usuario_id]
   );
+
   return result.rows;
 }
 
@@ -28,8 +56,22 @@ async function createProgreso(
   tiempo_acumulado,
   dificultad
 ) {
+
+  const existe = await dbClient.query(
+    'SELECT id FROM progreso WHERE usuario_id = $1 AND videojuego_id = $2',
+    [usuario_id, videojuego_id]
+  );
+
+  if (existe.rows.length > 0) {
+
+    return { error: "PROGRESO_DUPLICADO" };
+  }
+
   const result = await dbClient.query(
-    'INSERT INTO progreso (usuario_id, videojuego_id, tipo_videojuego, plataforma, estado_actual, tiempo_acumulado, dificultad) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+    `INSERT INTO progreso 
+     (usuario_id, videojuego_id, tipo_videojuego, plataforma, estado_actual, tiempo_acumulado, dificultad) 
+     VALUES ($1, $2, $3, $4, $5, $6, $7)
+     RETURNING *`,
     [
       usuario_id,
       videojuego_id,
@@ -41,13 +83,10 @@ async function createProgreso(
     ]
   );
 
-  if (result.rowCount === 0) {
-    return undefined;
-  }
+  if (result.rowCount === 0) return undefined;
 
   return result.rows[0];
 }
-
 
 // delete progreso
 async function deleteProgreso(id, usuario_id) {

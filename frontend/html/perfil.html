@@ -5,38 +5,38 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 		<link rel="stylesheet" href="../styles/main.css">
-		<title>minombre.com</title>
+		<title>GameTrack.com</title>
 	</head>
 	<body>
 		
     <div id="navbar-container"></div>
     <div id="modal-container"></div>
 
-	<div class="separador-perfil">
-		<h1 class="texto-separador">PERFIL</h1>
-	
-	</div>
-	<div class="card card-perfil">
+	  <div class="separador-perfil">
+		  <h1 class="texto-separador">PERFIL</h1>
+	  </div>
+
+	  <div class="card card-perfil">
 		<header class="card-header card-header-perfil">
 			<p class="card-header-title is-centered">
 				DATOS DEL USUARIO
 			</p>
 		</header>	
 		<div class="card-content">
-				<div class="content">
-					<h1 class="title title-perfil">NOMBRE:</h1>
-					<h2 class="subtitle subtitle-perfil">Nombre del usuario</h2>
-					<h1 class="title title-perfil">NOMBRE DE USUARIO:</h1>
-					<h2 class="subtitle subtitle-perfil">Username</h2>
-					<h1 class="title title-perfil">CONTRASEÑA:</h1>
-					<h2 class="subtitle subtitle-perfil">1234</h2>
-					<h1 class="title title-perfil">EMAIL:</h1>
-					<h2 class="subtitle subtitle-perfil">correo.com</h2>
-					<h1 class="title title-perfil">PAÍS:</h1>
-					<h2 class="subtitle subtitle-perfil">Argentina</h2>
-					<h1 class="title title-perfil">GÉNERO:</h1>
-					<h2 class="subtitle subtitle-perfil">M</h2>
-				</div>
+      <div class="content">
+        <h1 class="title title-perfil">NOMBRE:</h1>
+        <h2 class="subtitle subtitle-perfil" id="perfil-nombre">Nombre del usuario</h2>
+        <h1 class="title title-perfil">NOMBRE DE USUARIO:</h1>
+        <h2 class="subtitle subtitle-perfil" id="perfil-username">Username</h2>
+        <h1 class="title title-perfil">CONTRASEÑA:</h1>
+        <h2 class="subtitle subtitle-perfil" id="perfil-password">1234</h2>
+        <h1 class="title title-perfil">EMAIL:</h1>
+        <h2 class="subtitle subtitle-perfil" id="perfil-email">correo.com</h2>
+        <h1 class="title title-perfil">PAÍS:</h1>
+        <h2 class="subtitle subtitle-perfil" id="perfil-pais">Argentina</h2>
+        <h1 class="title title-perfil">GÉNERO:</h1>
+        <h2 class="subtitle subtitle-perfil" id="perfil-genero">M</h2>      
+      </div>
 		</div>
 		<header class="card-header card-header-perfil">
 			<p class="card-header-title is-centered">
@@ -62,8 +62,8 @@
 									<span class="genre">Género: Acción y Aventura</span>
 							</p>
 							<div class="div-barra-progreso">
-                				<progress class="progress is-warning" value="70" max="100"></progress>
-            				</div>
+                <progress class="progress is-warning" value="70" max="100"></progress>
+              </div>
 							<br />
 							<div>
 								<span class="tag is-info is-light">Progreso: 1%</span>   
@@ -91,8 +91,8 @@
 							</p>
 							
 							<div class="div-barra-progreso">
-                				<progress class="progress is-warning" value="70" max="100"></progress>
-            				</div>
+                <progress class="progress is-warning" value="70" max="100"></progress>
+            	</div>
 							<br />
 							<div>
 								<span class="tag is-info is-light">Progreso: 1%</span>   
@@ -135,20 +135,20 @@
 				</div>
 			
 		</div>
-	</div>
+    </div>
 
-	<div id="editar_perfil-container"></div>
+    <div id="editar_perfil-container"></div>
 
-	<footer class="footer">
-		<div id="footer-container"></div>	
-	</footer>
+    <footer class="footer">
+      <div id="footer-container"></div>	
+    </footer>
 
-	<script src="../js/navbar.js"></script>
-	<script src="../js/registro_login.js"></script>
-	<script src="../js/footer.js"></script>
-	<script src="../js/editar_perfil.js"></script>
+    <script src="../js/global/navbar.js"></script>
+    <script src="../js/global/registro_login.js"></script>
+    <script src="../js/global/footer.js"></script>
+    <script src="../js/modal_editar_perfil.js"></script>
     <script src="../js/registro_login.js"></script>
+    <script src="../js/perfil_fetch.js"></script>
 	</body>
 </html>
 	
-  

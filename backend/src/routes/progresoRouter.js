@@ -54,7 +54,11 @@ router.post('/', async (req, res) => {
     req.body.estado_actual,
     req.body.tiempo_acumulado,
     req.body.dificultad
-  );
+  )
+
+  if (progreso?.error === "PROGRESO_DUPLICADO") {
+    return res.status(400).json({ error: "Ya tienes un progreso para este videojuego" });
+  }  
 
   res.json({ status: "OK", progreso: progreso });
 });
