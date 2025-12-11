@@ -75,8 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link requiere-login" id="btn-guardar" data-id="">Guardar</button>
-          </div>
+            <button class="button is-link requiere-login" id="btn-guardar" data-id="" data-tipo="base">Guardar</button>          </div>
           <div class="control">
             <button class="button is-link is-light" id="btn-cancelar">Cancelar</button>
           </div>
@@ -102,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (boton) {
         const idVideojuego = boton.dataset.id;
         botonGuardarProgreso.dataset.id = idVideojuego;
+        botonGuardarProgreso.dataset.tipo = "base";
         modalAñadir.classList.add("is-active");
       }
     }
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nuevoProgreso = {
       usuario_id: usuarioID,
       videojuego_id: videojuegoID,
-      tipo_videojuego: "base",
+      tipo_videojuego: botonGuardarProgreso.dataset.tipo,
       plataforma: plataforma,
       estado_actual: estado,
       tiempo_acumulado: tiempo,

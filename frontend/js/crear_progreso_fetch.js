@@ -14,7 +14,7 @@ if (botonGuardar) {
     const nuevoProgreso = {
       usuario_id: userId,
       videojuego_id: videojuegoID,
-      tipo_videojuego: "base",
+      tipo_videojuego: tipo,
       plataforma: plataforma,
       estado_actual: estado,
       tiempo_acumulado: tiempo,
