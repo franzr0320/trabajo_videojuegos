@@ -58,13 +58,11 @@ fetch(misVideojuegosURL).then(function(response) {
 
 document.addEventListener("click", function (event) {
   
-  // si el botón dice "Editar"
   if (event.target.textContent === "Editar") {
 
-    // agarro la tarjeta del videojuego
+
     const card = event.target.closest(".box");
 
-    // saco el id del videojuego
     const idVideojuego = card.getAttribute("data-id");
 
     // abro el modal de editar
@@ -77,19 +75,14 @@ document.addEventListener("click", function (event) {
 
   }
 
-  // si el botón dice "Eliminar"
   if (event.target.textContent === "Eliminar") {
 
-    // agarro la tarjeta del videojuego
     const card = event.target.closest(".box");
 
-    // saco el id del videojuego
     const idVideojuego = card.getAttribute("data-id");
 
-    // confirmación simple
     if (!confirm("¿Seguro que quieres eliminar este videojuego?")) return;
 
-    // hago el delete al backend
     fetch(`http://localhost:3000/api/videojuegos-usuario/${usuarioID}/${idVideojuego}`, {
     method: "DELETE"
     })

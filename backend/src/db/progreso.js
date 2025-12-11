@@ -63,11 +63,10 @@ async function createProgreso(
   );
 
   if (existe.rows.length > 0) {
-    // ya existe → no creamos otro
+
     return { error: "PROGRESO_DUPLICADO" };
   }
 
-  // 2️⃣ Si no existe → creamos el progreso normalmente
   const result = await dbClient.query(
     `INSERT INTO progreso 
      (usuario_id, videojuego_id, tipo_videojuego, plataforma, estado_actual, tiempo_acumulado, dificultad) 
