@@ -18,7 +18,7 @@
 }
 
 .is-50x50 {
-    width: 100px;
+    width: 130px;
     height: 100px;
 }
 
@@ -30,8 +30,9 @@
     padding: 15px;
     background-color: var(--card-color);
     flex: 1 1;
-    min-width: 445px;
+    min-width: 500px;
     max-width: 700px;
+    height: 240px;
     margin: 4px;
     position: relative;
     border-radius: 10px;
@@ -62,6 +63,9 @@
     color:burlywood;
 }
 
+.div-barra-progreso {
+    margin-right: 30px;
+}
 /* Estilos para la posición botón eliminar */
 .boton-eliminar-progreso {
     position: absolute;
@@ -91,12 +95,4 @@
     border-color: var(--tertiary-color);
     color: var(--primary-color);
 
-}
-
-/* Aumentar altura del card en pantallas tamaño tablet */
-@media (max-width: 1300px) {
-    .box-progreso {
-        height: 34vh;
-        min-height: 160px;
-    }
 }
