@@ -34,6 +34,17 @@
     font-size: 20px;
 }
 
+.titulo-juego {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-primary-color);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
 /* Estilos para el playtime*/
 .tag {
     font-size: 15px;
